@@ -14,15 +14,20 @@ import java.io.FileReader;
  */
 public class Main {
     
+    //base url
     private static String base_files_url = "src/pm2012_1";
+    
+    //arrays com os itens carregados
+    private static Preco[] precos;
+    private static Venda[] vendas;
+    private static Vendedor[] vendedores;
 
     /**
      * @param args the command line arguments
      */
       public static void main(String[] args) {
+        System.out.println("Application Started!!!!");
           
-        
-
         //load files
         loadVendas(base_files_url + "/vendas.txt");
         loadPrecos(base_files_url + "/precos.txt");
@@ -31,8 +36,6 @@ public class Main {
         //calc and generate output file
         calcCommission();
         buildCommissionFile();
-
-        System.out.println("Application Started!!!!");
     }
 
     private static void loadVendas(String vendasFile) {
@@ -49,7 +52,7 @@ public class Main {
                     vendasReader.close();
             }
         } catch (Exception e) {
-
+            System.out.println(e.getMessage());
         }
     }
 
@@ -67,7 +70,7 @@ public class Main {
                     vendedoresReader.close();
             }
         } catch (Exception e) {
-
+            System.out.println(e.getMessage());
         }
     }
 
@@ -85,7 +88,7 @@ public class Main {
                     precosReader.close();
             }
         } catch (Exception e) {
-
+            System.out.println(e.getMessage());
         }
     }
 
