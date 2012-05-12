@@ -8,6 +8,8 @@ package pm2012_1;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
+import java.util.Date;
+
 /**
  *
  * @author PC
@@ -45,7 +47,18 @@ public class Main {
             try {
                 vendasReader = new BufferedReader(
                         new FileReader(vendasFile));
-                System.out.println(vendasReader.readLine());
+                
+                String str;
+                while((str = vendasReader.readLine()) != null){
+                    System.out.println(str);
+                    String[] str_array = str.split(";");
+                    Venda venda = new Venda(new Date(), 
+                                            (str_array[1]),
+                                            Integer.parseInt(str_array[2]), 
+                                            Integer.parseInt(str_array[3]),
+                                            Integer.parseInt(str_array[4]));
+                    System.out.print(venda.toString());
+                }
 
             } finally {
                 if (vendasReader != null)
