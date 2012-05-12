@@ -28,7 +28,7 @@ public class Main {
         calcCommission();
         buildCommissionFile();
 
-        System.out.println("Application Started!");
+        System.out.println("Application Started!!!!");
     }
 
     private static void loadVendas() {
