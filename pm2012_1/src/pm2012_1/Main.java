@@ -13,16 +13,20 @@ import java.io.FileReader;
  * @author PC
  */
 public class Main {
+    
+    private static String base_files_url = "src/pm2012_1";
 
     /**
      * @param args the command line arguments
      */
       public static void main(String[] args) {
+          
+        
 
         //load files
-        loadVendas();
-        loadPrecos();
-        loadVendedores();
+        loadVendas(base_files_url + "/vendas.txt");
+        loadPrecos(base_files_url + "/precos.txt");
+        loadVendedores(base_files_url + "/vendedores.txt");
 
         //calc and generate output file
         calcCommission();
@@ -31,13 +35,13 @@ public class Main {
         System.out.println("Application Started!!!!");
     }
 
-    private static void loadVendas() {
+    private static void loadVendas(String vendasFile) {
 
         BufferedReader vendasReader = null;
         try {
             try {
                 vendasReader = new BufferedReader(
-                        new FileReader("src/pm2012_1/vendas.txt"));
+                        new FileReader(vendasFile));
                 System.out.println(vendasReader.readLine());
 
             } finally {
@@ -49,13 +53,13 @@ public class Main {
         }
     }
 
-    private static void loadVendedores() {
+    private static void loadVendedores(String vendedoresFile) {
 
         BufferedReader vendedoresReader = null;
         try {
             try {
                 vendedoresReader = new BufferedReader(
-                        new FileReader("src/pm2012_1/vendedores.txt"));
+                        new FileReader(vendedoresFile));
                 System.out.println(vendedoresReader.readLine());
 
             } finally {
@@ -67,13 +71,13 @@ public class Main {
         }
     }
 
-    private static void loadPrecos() {
+    private static void loadPrecos(String precosFile) {
 
         BufferedReader precosReader = null;
         try {
             try {
                 precosReader = new BufferedReader(
-                        new FileReader("src/pm2012_1/precos.txt"));
+                        new FileReader(precosFile));
                 System.out.println(precosReader.readLine());
 
             } finally {
