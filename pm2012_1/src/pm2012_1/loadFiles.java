@@ -8,6 +8,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Date;
 
+
+
 /**
  *
  * @author PC
@@ -15,10 +17,12 @@ import java.util.Date;
 public class loadFiles {
 
     public loadFiles() {
+        
     }
 
     public static void loadVendas(String vendasFile) {
-
+        
+        Venda[] vendas = new Venda[3];
         BufferedReader vendasReader = null;
         try {
             try {
@@ -26,16 +30,22 @@ public class loadFiles {
                         new FileReader(vendasFile));
 
                 String str;
+                int i = 0;
                 while ((str = vendasReader.readLine()) != null) {
-                    System.out.println(str);
+                    //System.out.println(str);
                     String[] str_array = str.split(";");
                     Venda venda = new Venda(new Date(),
                             (str_array[1]),
                             Integer.parseInt(str_array[2]),
                             Integer.parseInt(str_array[3]),
                             Integer.parseInt(str_array[4]));
-                    System.out.print(venda.toString());
+                    vendas[i] = venda;
+                    System.out.println(venda.toString());
                 }
+                
+               // for (Venda v: vendas) {
+                 //   System.out.println(v.toString());
+                //}
 
             } finally {
                 if (vendasReader != null) {
