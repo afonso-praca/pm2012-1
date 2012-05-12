@@ -17,7 +17,7 @@ import java.util.Date;
 public class Main {
     
     //base url
-    private static String base_files_url = "src/pm2012_1";
+    private static String base_files_url = "src/";
     
     //arrays com os itens carregados
     private static Preco[] precos;
@@ -31,9 +31,9 @@ public class Main {
         System.out.println("Application Started!!!!!");
           
         //load files
-        loadVendas(base_files_url + "/vendas.txt");
-        loadPrecos(base_files_url + "/precos.txt");
-        loadVendedores(base_files_url + "/vendedores.txt");
+        loadVendas(base_files_url + "txt/vendas.txt");
+        loadPrecos(base_files_url + "txt/precos.txt");
+        loadVendedores(base_files_url + "txt/vendedores.txt");
 
         //calc and generate output file
         calcCommission();
