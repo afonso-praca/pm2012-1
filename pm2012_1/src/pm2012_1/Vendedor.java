@@ -38,4 +38,6 @@ public class Vendedor {
         public void setCategoria(Categorias categoria) {
             this.categoria = categoria;
         }
+
+        
 }
