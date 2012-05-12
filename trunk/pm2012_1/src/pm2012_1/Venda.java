@@ -17,7 +17,22 @@ public class Venda {
 	private int QuantidadePA;
 	private int QuantidadePB;
 	private int QuantidadePC;
+
+    public Venda(Date Data, String CodigoVendedor, int QuantidadePA, int QuantidadePB, int QuantidadePC) {
+        this.Data = Data;
+        this.CodigoVendedor = CodigoVendedor;
+        this.QuantidadePA = QuantidadePA;
+        this.QuantidadePB = QuantidadePB;
+        this.QuantidadePC = QuantidadePC;
+    }
+
+    @Override
+    public String toString() {
+        return "Venda{" + "Data=" + Data + ", CodigoVendedor=" + CodigoVendedor + ", QuantidadePA=" + QuantidadePA + ", QuantidadePB=" + QuantidadePB + ", QuantidadePC=" + QuantidadePC + '}';
+    }
 	
+    
+        
 	
 	public Date getData() {
 		return Data;
