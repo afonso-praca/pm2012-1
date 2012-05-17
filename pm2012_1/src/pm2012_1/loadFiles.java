@@ -6,7 +6,7 @@ package pm2012_1;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.Date;
+
 
 
 
@@ -16,6 +16,7 @@ import java.util.Date;
  */
 public class loadFiles {
 
+    
     public loadFiles() {
         
     }
@@ -67,7 +68,47 @@ public class loadFiles {
 
     public static void loadVendedores(String vendedoresFile) {
 
+
+
+
+
+        Vendedor[] vendedores = new Vendedor[3];
         BufferedReader vendedoresReader = null;
+        
+        try {
+            try {
+                vendedoresReader = new BufferedReader(
+                        new FileReader(vendedoresFile));
+
+                String str;
+                
+                int i = 0;
+                while ((str = vendedoresReader.readLine()) != null) {
+                    //System.out.println(str);
+                    String[] str_Text = str.split(";");
+
+                     Vendedor vendedor = new Vendedor((str_Text[0]),(str_Text[1]), Integer.parseInt(str_Text[2]));
+
+                    vendedores[i] = vendedor;
+                    System.out.println(vendedor.toString());
+                }
+
+                // for (Venda v: vendas) {
+                //   System.out.println(v.toString());
+                //}
+
+            } finally {
+                if (vendedoresReader != null) {
+                    vendedoresReader.close();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+
+
+/*        BufferedReader vendedoresReader = null;
         try {
             try {
                 vendedoresReader = new BufferedReader(
@@ -83,7 +124,8 @@ public class loadFiles {
             System.out.println(e.getMessage());
         }
     }
-
+*/
+    }
     public static void loadPrecos(String precosFile) {
 
         BufferedReader precosReader = null;
