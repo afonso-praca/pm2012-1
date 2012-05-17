@@ -22,19 +22,26 @@ public class loadFiles {
 
     public static void loadVendas(String vendasFile) {
         
+
         Venda[] vendas = new Venda[3];
         BufferedReader vendasReader = null;
+        String[] str_date = new String[3];
         try {
             try {
                 vendasReader = new BufferedReader(
                         new FileReader(vendasFile));
 
                 String str;
+                String aux;
                 int i = 0;
                 while ((str = vendasReader.readLine()) != null) {
                     //System.out.println(str);
                     String[] str_array = str.split(";");
-                    Venda venda = new Venda(new Date(),
+
+                    str_date = str_array[0].split("/");
+                    aux = str_date[1];
+
+                    Venda venda = new Venda(aux,
                             (str_array[1]),
                             Integer.parseInt(str_array[2]),
                             Integer.parseInt(str_array[3]),
@@ -42,9 +49,9 @@ public class loadFiles {
                     vendas[i] = venda;
                     System.out.println(venda.toString());
                 }
-                
-               // for (Venda v: vendas) {
-                 //   System.out.println(v.toString());
+
+                // for (Venda v: vendas) {
+                //   System.out.println(v.toString());
                 //}
 
             } finally {
@@ -55,6 +62,7 @@ public class loadFiles {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+
     }
 
     public static void loadVendedores(String vendedoresFile) {

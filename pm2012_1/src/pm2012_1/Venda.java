@@ -12,67 +12,69 @@ import java.util.Date;
  */
 public class Venda {
     
-	private Date Data;
-	private String CodigoVendedor;
-	private int QuantidadePA;
-	private int QuantidadePB;
-	private int QuantidadePC;
+	private String mes;
+	private String codigoVendedor;
+	private int quantidadePA;
+	private int quantidadePB;
+	private int quantidadePC;
 
-    public Venda(Date Data, String CodigoVendedor, int QuantidadePA, int QuantidadePB, int QuantidadePC) {
-        this.Data = Data;
-        this.CodigoVendedor = CodigoVendedor;
-        this.QuantidadePA = QuantidadePA;
-        this.QuantidadePB = QuantidadePB;
-        this.QuantidadePC = QuantidadePC;
+    public Venda(String mes, String codigoVendedor, int quantidadePA, int quantidadePB, int quantidadePC) {
+        this.mes = mes;
+        this.codigoVendedor = codigoVendedor;
+        this.quantidadePA = quantidadePA;
+        this.quantidadePB = quantidadePB;
+        this.quantidadePC = quantidadePC;
     }
+
+
 
     @Override
     public String toString() {
-        return "Venda{" + "Data=" + Data + ", CodigoVendedor=" + CodigoVendedor + ", QuantidadePA=" + QuantidadePA + ", QuantidadePB=" + QuantidadePB + ", QuantidadePC=" + QuantidadePC + '}';
+        return "Venda{" + "Mes=" + mes + ", CodigoVendedor=" + codigoVendedor + ", QuantidadePA=" + quantidadePA + ", QuantidadePB=" + quantidadePB + ", QuantidadePC=" + quantidadePC + '}';
+    }
+
+    public String getCodigoVendedor() {
+        return codigoVendedor;
+    }
+
+    public void setCodigoVendedor(String codigoVendedor) {
+        this.codigoVendedor = codigoVendedor;
+    }
+
+    public String getMes() {
+        return mes;
+    }
+
+    public void setMes(String mes) {
+        this.mes = mes;
+    }
+
+    public int getQuantidadePA() {
+        return quantidadePA;
+    }
+
+    public void setQuantidadePA(int quantidadePA) {
+        this.quantidadePA = quantidadePA;
+    }
+
+    public int getQuantidadePB() {
+        return quantidadePB;
+    }
+
+    public void setQuantidadePB(int quantidadePB) {
+        this.quantidadePB = quantidadePB;
+    }
+
+    public int getQuantidadePC() {
+        return quantidadePC;
+    }
+
+    public void setQuantidadePC(int quantidadePC) {
+        this.quantidadePC = quantidadePC;
     }
 	
     
         
 	
-	public Date getData() {
-		return Data;
-	}
-        
-	public void setData(Date data) {
-		Data = data;
-	}
-        
-	public String getCodigoVendedor() {
-		return CodigoVendedor;
-	}
-        
-	public void setCodigoVendedor(String codigoVendedor) {
-		CodigoVendedor = codigoVendedor;
-	}
-        
-	public int getQuantidadePA() {
-		return QuantidadePA;
-	}
-        
-	public void setQuantidadePA(int quantidadePA) {
-		QuantidadePA = quantidadePA;
-	}
-        
-	public int getQuantidadePB() {
-		return QuantidadePB;
-	}
-        
-	public void setQuantidadePB(int quantidadePB) {
-		QuantidadePB = quantidadePB;
-	}
-        
-	public int getQuantidadePC() {
-		return QuantidadePC;
-	}
-        
-	public void setQuantidadePC(int quantidadePC) {
-		QuantidadePC = quantidadePC;
-	}
 	
-
 }
