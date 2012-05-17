@@ -56,7 +56,7 @@ public class Vendedor {
 
             @Override
     public String toString() {
-        return "Vendedor{" + "Código=" + codigo + ", Nome=" + nome + ", Categoria=" + categoria + "" ;
+        return "Vendedor{" + "Código=" + codigo + ", Nome=" + nome + ", Categoria=" + categoria + "}" ;
     }
 
 }
