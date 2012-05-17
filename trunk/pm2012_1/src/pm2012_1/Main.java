@@ -33,9 +33,9 @@ public class Main {
         loadFiles lf = new loadFiles();
 
         //load files
-        lf.loadVendas(base_files_url + "txt/vendas.txt");
-        lf.loadPrecos(base_files_url + "txt/precos.txt");
-        lf.loadVendedores(base_files_url + "txt/vendedores.txt");
+        lf.loadVendas(base_files_url + "resources/vendas.txt");
+        lf.loadPrecos(base_files_url + "resources/precos.txt");
+        lf.loadVendedores(base_files_url + "resources/vendedores.txt");
 
         //calc and generate output file
         calcCommission();
