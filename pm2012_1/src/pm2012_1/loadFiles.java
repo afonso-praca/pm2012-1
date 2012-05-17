@@ -128,7 +128,53 @@ public class loadFiles {
     }
     public static void loadPrecos(String precosFile) {
 
-        BufferedReader precosReader = null;
+    Preco[] precos = new Preco[2];
+    BufferedReader precosReader = null;
+    String[] str_date2 = new String[3];
+        
+        
+        try {
+            try {
+                precosReader = new BufferedReader(
+                        new FileReader(precosFile));
+
+                String str2;
+                String aux2;
+                
+                int i = 0;
+                while ((str2 = precosReader.readLine()) != null) {
+                    //System.out.println(str);
+                    String[] str_Text2 = str2.split(";");
+                    str_date2 = str_Text2[0].split("/");
+                    aux2 = str_date2[1];
+
+                    Preco preco = new Preco(aux2, Double.parseDouble(str_Text2[1]), Double.parseDouble(str_Text2[2]), Double.parseDouble(str_Text2[3]));
+
+                    precos[i] = preco;
+                    System.out.println(preco.toString());
+                }
+
+                // for (Venda v: vendas) {
+                //   System.out.println(v.toString());
+                //}
+
+            } finally {
+                if (precosReader != null) {
+                    precosReader.close();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+     
+        
+        
+        
+        
+        
+        
+        
+        /*BufferedReader precosReader = null;
         try {
             try {
                 precosReader = new BufferedReader(
@@ -143,5 +189,6 @@ public class loadFiles {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-    }
+    }*/
+}
 }
