@@ -148,7 +148,11 @@ public class loadFiles {
                     str_date2 = str_Text2[0].split("/");
                     aux2 = str_date2[1];
 
-                    Preco preco = new Preco(aux2, Double.parseDouble(str_Text2[1]), Double.parseDouble(str_Text2[2]), Double.parseDouble(str_Text2[3]));
+                    String a = str_Text2[1].replaceAll(",",".");
+                    String b = str_Text2[2].replaceAll(",",".");
+                    String c = str_Text2[3].replaceAll(",",".");
+                    
+                    Preco preco = new Preco(aux2, Double.parseDouble(a), Double.parseDouble(b), Double.parseDouble(c));
 
                     precos[i] = preco;
                     System.out.println(preco.toString());
