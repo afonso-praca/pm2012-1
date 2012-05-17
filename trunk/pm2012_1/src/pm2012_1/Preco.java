@@ -4,8 +4,6 @@
  */
 package pm2012_1;
 
-import java.util.Date;
-
 /**
  *
  * @author Taís
@@ -17,17 +15,18 @@ public class Preco {
 	private double PrecoPB;
 	private double PrecoPC;
 
-    public Preco(String mes, double PrecoPA, double PrecoPB, double PrecoPC) {
-        this.mes = mes;
-        this.PrecoPA = PrecoPA;
-        this.PrecoPB = PrecoPB;
-        this.PrecoPC = PrecoPC;
+        public Preco(String mes, double PrecoPA, double PrecoPB, double PrecoPC) {
+            this.mes = mes;
+            this.PrecoPA = PrecoPA;
+            this.PrecoPB = PrecoPB;
+            this.PrecoPC = PrecoPC;
     }
 
-              @Override
-    public String toString() {
-        return "Preco{" + "Mes=" + mes + ", PrecoPA=" + PrecoPA + ", PrecoPB=" + PrecoPB + ", PrecoPC=" + PrecoPC;   
-              }    
+    @Override
+        public String toString() {
+            return "Preco{" + "Mes=" + mes + ", PrecoPA=" + PrecoPA + ", " + "PrecoPB=" + PrecoPB + ", PrecoPC=" + PrecoPC + "}";   
+     }    
+    
         public String getMes() {
                 return mes;
         }
