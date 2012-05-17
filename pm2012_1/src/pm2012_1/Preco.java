@@ -12,17 +12,31 @@ import java.util.Date;
  */
 public class Preco {
     
-        private Date Data;
+        String mes;
 	private double PrecoPA;
 	private double PrecoPB;
 	private double PrecoPC;
+
+    public Preco(String mes, double PrecoPA, double PrecoPB, double PrecoPC) {
+        this.mes = mes;
+        this.PrecoPA = PrecoPA;
+        this.PrecoPB = PrecoPB;
+        this.PrecoPC = PrecoPC;
+    }
+
+              @Override
+    public String toString() {
+        return "Preco{" + "Mes=" + mes + ", PrecoPA=" + PrecoPA + ", PrecoPB=" + PrecoPB + ", PrecoPC=" + PrecoPC;   
+              }    
+        public String getMes() {
+                return mes;
+        }
+
+        public void setMes(String mes) {
+                this.mes = mes;
+        }
 	
-	public Date getData() {
-		return Data;
-	}
-	public void setData(Date data) {
-		Data = data;
-	}
+        
 	public double getPrecoPA() {
 		return PrecoPA;
 	}
