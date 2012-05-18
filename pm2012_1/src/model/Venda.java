@@ -24,6 +24,8 @@ public class Venda {
         this.quantidadePC = quantidadePC;
     }
 
+    public Venda() {
+    }
 
 
     @Override
