@@ -20,7 +20,10 @@ public class Preco {
             this.PrecoPA = PrecoPA;
             this.PrecoPB = PrecoPB;
             this.PrecoPC = PrecoPC;
-    }
+        }
+
+        public Preco() {
+        }
 
     @Override
         public String toString() {
