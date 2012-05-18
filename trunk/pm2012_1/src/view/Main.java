@@ -217,7 +217,7 @@ public class Main extends javax.swing.JFrame {
         String vendedores = text_filed_vendedores.getText();
         String saida = text_filed_saida.getText();
         
-        //chama o controler
+        //chama o controler.java
         //aqui vamos passar as urls que devem ser carregadas
         Controller.init(mes, precos, vendas, vendedores, saida);
     }//GEN-LAST:event_button_calcActionPerformed
