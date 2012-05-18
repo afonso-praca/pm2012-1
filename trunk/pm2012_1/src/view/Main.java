@@ -49,6 +49,7 @@ public class Main extends javax.swing.JFrame {
         text_filed_vendedores = new javax.swing.JTextField();
         text_filed_saida = new javax.swing.JTextField();
         button_calc = new javax.swing.JButton();
+        btFileChooserVendas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFocusable(false);
@@ -108,6 +109,13 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        btFileChooserVendas.setText("localizar");
+        btFileChooserVendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btFileChooserVendasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panel_info_fieldsLayout = new javax.swing.GroupLayout(panel_info_fields);
         panel_info_fields.setLayout(panel_info_fieldsLayout);
         panel_info_fieldsLayout.setHorizontalGroup(
@@ -123,13 +131,16 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(button_calc)
-                    .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(text_filed_mes, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                        .addComponent(text_filed_vendas)
-                        .addComponent(text_filed_precos)
-                        .addComponent(text_filed_vendedores)
-                        .addComponent(text_filed_saida)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panel_info_fieldsLayout.createSequentialGroup()
+                        .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(text_filed_mes, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(text_filed_vendas)
+                            .addComponent(text_filed_precos)
+                            .addComponent(text_filed_vendedores)
+                            .addComponent(text_filed_saida))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btFileChooserVendas)))
+                .addContainerGap(236, Short.MAX_VALUE))
         );
         panel_info_fieldsLayout.setVerticalGroup(
             panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,7 +152,8 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(text_filed_vendas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_vendas))
+                    .addComponent(label_vendas)
+                    .addComponent(btFileChooserVendas))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(text_filed_precos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -156,7 +168,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(text_filed_saida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(button_calc)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         panel_info_fieldsLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {label_mes, label_precos, label_saida, label_vendas, label_vendedores});
@@ -222,6 +234,15 @@ public class Main extends javax.swing.JFrame {
         Controller.init(mes, precos, vendas, vendedores, saida);
     }//GEN-LAST:event_button_calcActionPerformed
 
+    private void btFileChooserVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFileChooserVendasActionPerformed
+        System.out.println("click");
+        fileChooser f = new fileChooser();
+        
+        f.setTitle("escolha o arquivo");
+        f.setVisible(true);
+        f.setDefaultCloseOperation(HIDE_ON_CLOSE);
+    }//GEN-LAST:event_btFileChooserVendasActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -234,6 +255,7 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btFileChooserVendas;
     private javax.swing.JButton button_calc;
     private javax.swing.JLabel label_informacoes;
     private javax.swing.JLabel label_mes;
