@@ -24,7 +24,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jFileChooser1" min="-2" max="-2" attributes="0"/>
+              <Component id="vendas_file_chooser" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -33,14 +33,14 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jFileChooser1" min="-2" max="-2" attributes="0"/>
+              <Component id="vendas_file_chooser" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JFileChooser" name="jFileChooser1">
+    <Component class="javax.swing.JFileChooser" name="vendas_file_chooser">
     </Component>
   </SubComponents>
 </Form>
