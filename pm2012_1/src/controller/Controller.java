@@ -14,21 +14,16 @@ import model.Vendedor;
  */
 public class Controller {
     
-    //base url
-    private static String base_files_url = "src/";
-    
     //arrays com os itens carregados
     private static Preco[] precos;
     private static Venda[] vendas;
     private static Vendedor[] vendedores;
     
     //functions
-    public static void init(){
-        loadFiles lf = new loadFiles();
-
+    public static void init(String mes, String precos, String vendas, String vendedores, String saida){
         //load files
-        loadFiles.loadVendas(base_files_url + "resources/vendas.txt");
-        loadFiles.loadPrecos(base_files_url + "resources/precos.txt");
-        loadFiles.loadVendedores(base_files_url + "resources/vendedores.txt");
+        loadFiles.loadVendas(vendas);
+        loadFiles.loadPrecos(precos);
+        loadFiles.loadVendedores(vendedores);
     }
 }
