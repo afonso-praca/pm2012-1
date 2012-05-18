@@ -211,7 +211,7 @@ public class Main extends javax.swing.JFrame {
     
     private void button_calcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_calcActionPerformed
         
-        String txt = text_filed_mes.getText();
+        String mes = text_filed_mes.getText();
         String vendas = text_filed_vendas.getText();
         String precos = text_filed_precos.getText();
         String vendedores = text_filed_vendedores.getText();
@@ -219,7 +219,7 @@ public class Main extends javax.swing.JFrame {
         
         //chama o controler
         //aqui vamos passar as urls que devem ser carregadas
-        Controller.init();
+        Controller.init(mes, precos, vendas, vendedores, saida);
     }//GEN-LAST:event_button_calcActionPerformed
 
     /**
