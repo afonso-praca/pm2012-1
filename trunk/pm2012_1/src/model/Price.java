@@ -8,21 +8,21 @@ package model;
  *
  * @author Taís
  */
-public class Preco {
+public class Price {
     
         String mes;
 	private double PrecoPA;
 	private double PrecoPB;
 	private double PrecoPC;
 
-        public Preco(String mes, double PrecoPA, double PrecoPB, double PrecoPC) {
+        public Price(String mes, double PrecoPA, double PrecoPB, double PrecoPC) {
             this.mes = mes;
             this.PrecoPA = PrecoPA;
             this.PrecoPB = PrecoPB;
             this.PrecoPC = PrecoPC;
         }
 
-        public Preco() {
+        public Price() {
         }
 
     @Override

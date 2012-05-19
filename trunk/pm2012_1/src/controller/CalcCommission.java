@@ -2,17 +2,21 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package controller;
+
+import model.Price;
+import model.Sale;
+import model.Seller;
 
 /**
  *
  * @author Marina Vinhaes
  */
-public class CalculoComissao{
+public class CalcCommission{
 
-    private Venda v;
-    private Preco p;
-    private Vendedor vend;
+    private Sale v;
+    private Price p;
+    private Seller vend;
     
     public void logicaComissao(){
         double vendas = 0;

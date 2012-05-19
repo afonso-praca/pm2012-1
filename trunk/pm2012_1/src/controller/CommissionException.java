@@ -2,14 +2,14 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package controller;
 
 /**
  *
  * @author Marina Vinhaes
  */
-public class ComissaoException extends Exception{
-    public ComissaoException (String message){
+public class CommissionException extends Exception{
+    public CommissionException (String message){
             super(message);
     }
 }

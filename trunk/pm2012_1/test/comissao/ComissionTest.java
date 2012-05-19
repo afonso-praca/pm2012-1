@@ -5,11 +5,11 @@ package comissao;
  * and open the template in the editor.
  */
 
-import model.CalculoComissao;
-import model.ComissaoException;
-import model.Preco;
-import model.Venda;
-import model.Vendedor;
+import controller.CalcCommission;
+import controller.CommissionException;
+import model.Price;
+import model.Sale;
+import model.Seller;
 import org.junit.Assume;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,28 +19,28 @@ import static org.junit.Assert.*;
  *
  * @author Marina Vinhaes
  */
-public class ComissaoTest {
+public class ComissionTest {
     
-   private Venda v;
-   private Preco p;
-   private Vendedor vend;
-   private CalculoComissao c;
+   private Sale v;
+   private Price p;
+   private Seller vend;
+   private CalcCommission c;
     
     @Before 
     public void Venda(){
-        v = new Venda("10/03/2011", "0020" , 10 , 30 , 50);
+        v = new Sale("10/03/2011", "0020" , 10 , 30 , 50);
         Assume.assumeNotNull(v);
     }
     
     @Before 
     public void Preco(){
-        p = new Preco("10/02/2011", 40.00 , 50.00 , 70.00);
+        p = new Price("10/02/2011", 40.00 , 50.00 , 70.00);
         Assume.assumeNotNull(p);
     }
     
     @Before 
     public void Vendedor(){
-        vend = new Vendedor("0019" , "AFONSO CARVALHO" , 1);
+        vend = new Seller("0019" , "AFONSO CARVALHO" , 1);
         Assume.assumeNotNull(vend);
     }
 

@@ -8,7 +8,7 @@ package model;
  *
  * @author Taís
  */
-public class Venda {
+public class Sale {
     
 	private String mes;
 	private String codigoVendedor;
@@ -16,7 +16,7 @@ public class Venda {
 	private int quantidadePB;
 	private int quantidadePC;
 
-    public Venda(String mes, String codigoVendedor, int quantidadePA, int quantidadePB, int quantidadePC) {
+    public Sale(String mes, String codigoVendedor, int quantidadePA, int quantidadePB, int quantidadePC) {
         this.mes = mes;
         this.codigoVendedor = codigoVendedor;
         this.quantidadePA = quantidadePA;
@@ -24,7 +24,7 @@ public class Venda {
         this.quantidadePC = quantidadePC;
     }
 
-    public Venda() {
+    public Sale() {
     }
 
 

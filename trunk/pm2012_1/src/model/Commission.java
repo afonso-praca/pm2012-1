@@ -4,16 +4,16 @@
  */
 package model;
 
-import model.Vendedor;
+import model.Seller;
 
 /**
  *
  * @author Taís
  */
-public class Comissao {
+public class Commission {
     
         private String Mes;
-	private Vendedor Vendedor;
+	private Seller Vendedor;
 	private double TotalVendidoProdutoA;
 	private double TotalVendidoProdutoB;
 	private double TotalVendidoProdutoC;
@@ -28,11 +28,11 @@ public class Comissao {
 		Mes = mes;
 	}
         
-	public Vendedor getVendedor() {
+	public Seller getVendedor() {
 		return Vendedor;
 	}
         
-	public void setVendedor(Vendedor vendedor) {
+	public void setVendedor(Seller vendedor) {
 		Vendedor = vendedor;
 	}
         

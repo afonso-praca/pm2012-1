@@ -12,7 +12,7 @@ import org.junit.runners.Suite;
  * @author Marina Vinhaes
  */
 @RunWith(value = Suite.class)
-@Suite.SuiteClasses({ComissaoTest.class})
-public class TodosTestes {
+@Suite.SuiteClasses({ComissionTest.class})
+public class AllTest {
     
 }

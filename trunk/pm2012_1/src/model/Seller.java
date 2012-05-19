@@ -8,7 +8,7 @@ package model;
  *
  * @author Taís
  */
-public class Vendedor {
+public class Seller {
 
     
         public enum Categoria { CATEGORIA1 , CATEGORIA2 ; }
@@ -17,7 +17,7 @@ public class Vendedor {
 	private String nome;
 	private int categoria;
 
-    public Vendedor(String codigo, String nome, int categoria) {
+    public Seller(String codigo, String nome, int categoria) {
         this.codigo = codigo;
         this.nome = nome;
         this.categoria = categoria;
