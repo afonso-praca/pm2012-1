@@ -50,6 +50,7 @@ public class Main extends javax.swing.JFrame {
         text_filed_saida = new javax.swing.JTextField();
         button_calc = new javax.swing.JButton();
         btFileChooserVendas = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFocusable(false);
@@ -116,6 +117,8 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("jButton1");
+
         javax.swing.GroupLayout panel_info_fieldsLayout = new javax.swing.GroupLayout(panel_info_fields);
         panel_info_fields.setLayout(panel_info_fieldsLayout);
         panel_info_fieldsLayout.setHorizontalGroup(
@@ -130,17 +133,22 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(label_saida))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(button_calc)
                     .addGroup(panel_info_fieldsLayout.createSequentialGroup()
-                        .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(text_filed_mes, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(text_filed_vendas)
-                            .addComponent(text_filed_precos)
-                            .addComponent(text_filed_vendedores)
-                            .addComponent(text_filed_saida))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btFileChooserVendas)))
-                .addContainerGap(236, Short.MAX_VALUE))
+                        .addComponent(jButton1)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(panel_info_fieldsLayout.createSequentialGroup()
+                        .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panel_info_fieldsLayout.createSequentialGroup()
+                                .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(text_filed_mes, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(text_filed_vendas)
+                                    .addComponent(text_filed_precos)
+                                    .addComponent(text_filed_vendedores)
+                                    .addComponent(text_filed_saida))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btFileChooserVendas))
+                            .addComponent(button_calc))
+                        .addContainerGap())))
         );
         panel_info_fieldsLayout.setVerticalGroup(
             panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,7 +176,9 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(text_filed_saida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(button_calc)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         panel_info_fieldsLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {label_mes, label_precos, label_saida, label_vendas, label_vendedores});
@@ -257,6 +267,7 @@ public class Main extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btFileChooserVendas;
     private javax.swing.JButton button_calc;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel label_informacoes;
     private javax.swing.JLabel label_mes;
     private javax.swing.JLabel label_precos;
