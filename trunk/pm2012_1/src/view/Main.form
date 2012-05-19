@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.1" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
@@ -160,28 +160,25 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="text_filed_mes" pref="200" max="32767" attributes="0"/>
-                                          <Component id="text_filed_vendas" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="text_filed_precos" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="text_filed_vendedores" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="text_filed_saida" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="btFileChooserVendas" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="button_calc" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="text_filed_mes" pref="200" max="32767" attributes="0"/>
+                                  <Component id="text_filed_vendas" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="text_filed_precos" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="text_filed_vendedores" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="text_filed_saida" alignment="0" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="btFileChooserVendedores" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btFileChooserPreços" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btFileChooserVendas" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
+                          <Component id="button_calc" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace pref="238" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -203,11 +200,13 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="text_filed_precos" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="label_precos" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btFileChooserPreços" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="text_filed_vendedores" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="label_vendedores" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btFileChooserVendedores" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -218,7 +217,7 @@
                       <Component id="button_calc" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="43" max="32767" attributes="0"/>
+                      <EmptySpace pref="37" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -266,7 +265,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="text_filed_mes">
               <Properties>
-                <Property name="name" type="java.lang.String" value=""/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="text_filed_vendas">
@@ -297,6 +296,22 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="jButton1"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btFileChooserPre&#xe7;os">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="localizar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btFileChooserPre&#xe7;osActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btFileChooserVendedores">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="localizar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btFileChooserVendedoresActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
