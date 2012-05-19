@@ -51,13 +51,15 @@ public class Main extends javax.swing.JFrame {
         button_calc = new javax.swing.JButton();
         btFileChooserVendas = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        btFileChooserPreços = new javax.swing.JButton();
+        btFileChooserVendedores = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFocusable(false);
 
         panel_title.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        label_title.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
+        label_title.setFont(new java.awt.Font("Tahoma", 1, 22));
         label_title.setForeground(new java.awt.Color(102, 102, 102));
         label_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_title.setText("SISTEMA DE GERAÇÃO DE COMISSÕES");
@@ -81,27 +83,27 @@ public class Main extends javax.swing.JFrame {
 
         panel_info.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        label_informacoes.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        label_informacoes.setFont(new java.awt.Font("Tahoma", 1, 12));
         label_informacoes.setText("Informações Necessárias:");
 
         panel_info_fields.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, null, java.awt.Color.blue, java.awt.Color.lightGray));
 
-        label_mes.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        label_mes.setFont(new java.awt.Font("Tahoma", 1, 11));
         label_mes.setText("Mês");
 
-        label_vendas.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        label_vendas.setFont(new java.awt.Font("Tahoma", 1, 11));
         label_vendas.setText("Arquivo de Vendas");
 
-        label_precos.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        label_precos.setFont(new java.awt.Font("Tahoma", 1, 11));
         label_precos.setText("Arquivo de Preços");
 
-        label_vendedores.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        label_vendedores.setFont(new java.awt.Font("Tahoma", 1, 11));
         label_vendedores.setText("Arquivo de Vendedores");
 
-        label_saida.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        label_saida.setFont(new java.awt.Font("Tahoma", 1, 11));
         label_saida.setText("Arquivo de Saida");
 
-        text_filed_mes.setName("");
+        text_filed_mes.setName(""); // NOI18N
 
         button_calc.setText("Calcular");
         button_calc.addActionListener(new java.awt.event.ActionListener() {
@@ -119,6 +121,20 @@ public class Main extends javax.swing.JFrame {
 
         jButton1.setText("jButton1");
 
+        btFileChooserPreços.setText("localizar");
+        btFileChooserPreços.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btFileChooserPreçosActionPerformed(evt);
+            }
+        });
+
+        btFileChooserVendedores.setText("localizar");
+        btFileChooserVendedores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btFileChooserVendedoresActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panel_info_fieldsLayout = new javax.swing.GroupLayout(panel_info_fields);
         panel_info_fields.setLayout(panel_info_fieldsLayout);
         panel_info_fieldsLayout.setHorizontalGroup(
@@ -133,22 +149,21 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(label_saida))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
                     .addGroup(panel_info_fieldsLayout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(panel_info_fieldsLayout.createSequentialGroup()
+                        .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(text_filed_mes, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(text_filed_vendas)
+                            .addComponent(text_filed_precos)
+                            .addComponent(text_filed_vendedores)
+                            .addComponent(text_filed_saida))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panel_info_fieldsLayout.createSequentialGroup()
-                                .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(text_filed_mes, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                    .addComponent(text_filed_vendas)
-                                    .addComponent(text_filed_precos)
-                                    .addComponent(text_filed_vendedores)
-                                    .addComponent(text_filed_saida))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btFileChooserVendas))
-                            .addComponent(button_calc))
-                        .addContainerGap())))
+                            .addComponent(btFileChooserVendedores)
+                            .addComponent(btFileChooserPreços)
+                            .addComponent(btFileChooserVendas)))
+                    .addComponent(button_calc))
+                .addContainerGap(238, Short.MAX_VALUE))
         );
         panel_info_fieldsLayout.setVerticalGroup(
             panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,11 +180,13 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(text_filed_precos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_precos))
+                    .addComponent(label_precos)
+                    .addComponent(btFileChooserPreços))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(text_filed_vendedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_vendedores))
+                    .addComponent(label_vendedores)
+                    .addComponent(btFileChooserVendedores))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label_saida)
@@ -178,7 +195,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(button_calc)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         panel_info_fieldsLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {label_mes, label_precos, label_saida, label_vendas, label_vendedores});
@@ -253,6 +270,24 @@ public class Main extends javax.swing.JFrame {
         f.setDefaultCloseOperation(HIDE_ON_CLOSE);
     }//GEN-LAST:event_btFileChooserVendasActionPerformed
 
+    private void btFileChooserPreçosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFileChooserPreçosActionPerformed
+        System.out.println("click");
+        fileChooser f1 = new fileChooser();
+        
+        f1.setTitle("escolha o arquivo");
+        f1.setVisible(true);
+        f1.setDefaultCloseOperation(HIDE_ON_CLOSE);
+    }//GEN-LAST:event_btFileChooserPreçosActionPerformed
+
+    private void btFileChooserVendedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFileChooserVendedoresActionPerformed
+        System.out.println("click");
+        fileChooser f2 = new fileChooser();
+        
+        f2.setTitle("escolha o arquivo");
+        f2.setVisible(true);
+        f2.setDefaultCloseOperation(HIDE_ON_CLOSE);
+    }//GEN-LAST:event_btFileChooserVendedoresActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -265,7 +300,9 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btFileChooserPreços;
     private javax.swing.JButton btFileChooserVendas;
+    private javax.swing.JButton btFileChooserVendedores;
     private javax.swing.JButton button_calc;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel label_informacoes;
