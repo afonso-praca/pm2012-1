@@ -270,15 +270,6 @@ public class Main extends javax.swing.JFrame {
         f.setDefaultCloseOperation(HIDE_ON_CLOSE);
     }//GEN-LAST:event_btFileChooserVendasActionPerformed
 
-    private void btFileChooserPreçosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFileChooserPreçosActionPerformed
-        System.out.println("click");
-        fileChooser f1 = new fileChooser();
-        
-        f1.setTitle("escolha o arquivo");
-        f1.setVisible(true);
-        f1.setDefaultCloseOperation(HIDE_ON_CLOSE);
-    }//GEN-LAST:event_btFileChooserPreçosActionPerformed
-
     private void btFileChooserVendedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFileChooserVendedoresActionPerformed
         System.out.println("click");
         fileChooser f2 = new fileChooser();
@@ -286,7 +277,16 @@ public class Main extends javax.swing.JFrame {
         f2.setTitle("escolha o arquivo");
         f2.setVisible(true);
         f2.setDefaultCloseOperation(HIDE_ON_CLOSE);
-    }//GEN-LAST:event_btFileChooserVendedoresActionPerformed
+}//GEN-LAST:event_btFileChooserVendedoresActionPerformed
+
+    private void btFileChooserPreçosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFileChooserPreçosActionPerformed
+        System.out.println("click");
+        fileChooser f1 = new fileChooser();
+        
+        f1.setTitle("escolha o arquivo");
+        f1.setVisible(true);
+        f1.setDefaultCloseOperation(HIDE_ON_CLOSE);
+}//GEN-LAST:event_btFileChooserPreçosActionPerformed
 
     /**
     * @param args the command line arguments
