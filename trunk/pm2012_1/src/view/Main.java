@@ -275,6 +275,7 @@ public class Main extends javax.swing.JFrame {
         //chama o controler.java
         //aqui vamos passar as urls que devem ser carregadas
         Controller.init(mes, precos, vendas, vendedores, saida);
+        Controller.calc(mes, precos, vendas, vendedores, saida);
     }//GEN-LAST:event_button_calcActionPerformed
 
     public String geraCaminho() {
