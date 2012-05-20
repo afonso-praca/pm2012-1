@@ -12,19 +12,27 @@ import model.Seller;
  *
  * @author Marina Vinhaes
  */
-public class CalcCommission{
-
-    private Sale v;
-    private Price p;
-    private Seller vend;
+public class CalcCommission {
+    private Sale sale;
+    private Price price;
+    private Seller seller;
     
-    public void logicaComissao(){
-        double vendas = 0;
+    Sale s = new Sale();
+    Price p = new Price();
+    Seller sel = new Seller();
+    
+    
+    public double logicaComissao(String precosFile, String vendasFile) throws CommissionException{
+        double vendas; 
         double comissao = 0;
     
-        vendas = ((v.getQuantidadePA() * p.getPrecoPA()) + (v.getQuantidadePB() * p.getPrecoPB()) + (v.getQuantidadePC() * p.getPrecoPC()));
+        System.out.println ("Seller:" + s);
+        vendas = ((s.getQuantidadePA() * p.getPrecoPA()) + (s.getQuantidadePB() * p.getPrecoPB()) + (s.getQuantidadePC() * p.getPrecoPC()));
+        System.out.println("Vendas" + vendas);
         
-        if (vend.getCategoria() == 1 ){         
+        System.out.println("Tenho Categoria!" + sel.getCategoria());
+        if (sel.getCategoria() == 1 ){  
+            System.out.println("Categoria é ..." + sel.getCategoria());
                 if (vendas < 1800.00){
                    comissao = ((vendas - 1800) * 0.2 ) + 240;
                 }else if((1000.00 < vendas) && (vendas < 1800.00)){
@@ -35,7 +43,7 @@ public class CalcCommission{
                 
                 System.out.println("Comissao Total Categoria 1:" + comissao);
                 
-        }else if (vend.getCategoria() == 2 ){
+        }else if (sel.getCategoria() == 2 ){
                 if (vendas <= 2000.00){
                    comissao = (vendas * 0.1); 
                 }else if(( 2000.00 < vendas) && (vendas <= 4000.00)){
@@ -47,9 +55,9 @@ public class CalcCommission{
                 System.out.println("Comissao Total Categoria 2:" + comissao);
         
         }else {
-        
-                System.out.println("Erro! Entre com a Categoria 1 ou Categoria 2");
+              throw new CommissionException("Comissao deve ser da Categoria 1 ou Categoria2");
         }
+        return vendas;
     }
-}
 
+}

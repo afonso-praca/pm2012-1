@@ -23,6 +23,9 @@ public class Seller {
         this.categoria = categoria;
     }
 
+    public Seller() {
+    }
+
     public int getCategoria() {
         return categoria;
     }
