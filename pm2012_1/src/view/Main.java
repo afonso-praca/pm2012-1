@@ -276,29 +276,38 @@ public class Main extends javax.swing.JFrame {
         controller = new Controller(this);
         
         String mes = text_field_mes.getText();
-        String vendas_path = text_field_vendas.getText();
-        String precos_path = text_field_precos.getText();
-        String vendedores_path = text_field_vendedores.getText();
-        String saida_path = text_field_saida.getText();
+        String msg = validaMes(mes); 
+            if("valido".equals(msg)){       	
+            String vendas_path = text_field_vendas.getText();
+            String precos_path = text_field_precos.getText();
+            String vendedores_path = text_field_vendedores.getText();
+            String saida_path = text_field_saida.getText();
 
-        //chama o controler.java
-        //aqui vamos passar as urls que devem ser carregadas
-        try {
-            System.out.println(vendas_path);
-            System.out.println(vendedores_path);
-            System.out.println(precos_path);
-            System.out.println(saida_path);
-            System.out.println(mes);
             
-            
-            controller.calculaComissoes(mes, vendas_path, precos_path, vendedores_path, saida_path);
-            
-            
-            
-            
-        } catch (Exception e) {
-            System.out.println("erro " + e.getMessage());
+            String msgArquivos = validaArquivos(vendas_path, precos_path, vendedores_path, saida_path);
+        	if("".equals(msgArquivos)){       		
+        	
+                //chama o controler.java
+                //aqui vamos passar as urls que devem ser carregadas
+                try {
+                    System.out.println(vendas_path);
+                    System.out.println(vendedores_path);
+                    System.out.println(precos_path);
+                    System.out.println(saida_path);
+                    System.out.println(mes);
+
+                    controller.calculaComissoes(mes, vendas_path, precos_path, vendedores_path, saida_path);
+        			
+        		} catch (Exception e) {
+        			System.out.println("erro " + e.getMessage());
+        		}
+        	}else{
+        		JOptionPane.showMessageDialog(this, msgArquivos);
+        	}        	
+        }else{
+        	JOptionPane.showMessageDialog(this, msg);
         }
+        //JOptionPane.showMessageDialog(saida_path,"Arquivo criado com sucesso!");
     }//GEN-LAST:event_button_calcActionPerformed
 
     public String geraCaminho() {
@@ -312,7 +321,7 @@ public class Main extends javax.swing.JFrame {
             return caminho;
 
         } else {
-            return "Arquivo não encontrado";
+            return "Selecione um arquivo";
         }
 
     }
@@ -334,6 +343,72 @@ public class Main extends javax.swing.JFrame {
         String caminho = arq.getPath();
         return caminho;
 
+    }
+    
+        private String validaMes(String mes){
+    	String msg = "valido";
+    	//usando a comparação com aspas "" para evitar null pointer exception se a variável mês vier nula
+    	if(!"".equals(mes)){
+    		try{
+    			int mesNumero = Integer.parseInt(mes);
+    		}catch(NumberFormatException ex){
+    			msg = "Mês informado é inválido!";
+    		}
+    	}else{
+    		msg = "Preenchimento do mês é obrigatório!";
+    	}
+    	
+    	return msg;
+    }
+    
+    private String converteMes(String mes){
+    	int mesNumero = Integer.parseInt(mes);
+    	switch (mesNumero) {
+		case 1:
+			return "Janeiro";
+		case 2:
+			return "Fevereiro";
+		case 3:
+			return "Março";
+		case 4:
+			return "Abril";
+                case 5:
+			return "Maio";
+                case 6:
+			return "Junho";
+                case 7:
+			return "Julho";
+                case 8:
+			return "Agosto";
+                case 9:
+			return "Setembro";
+                case 10:
+			return "Outubro";
+                case 11:
+			return "Novembro";
+                case 12:
+			return "Dezembro";
+		default:
+			return "Mês Inválido";
+		}
+    }
+    
+    private String validaArquivos(String vendas_path, String precos_path, String vendedores_path, String saida_path){
+    	String msg = "";
+    	
+    	if(vendas_path == null || "".equals(vendas_path))
+    		msg = "Arquivo de vendas é obrigatório\n";
+
+    	if(precos_path == null || "".equals(precos_path))
+    		msg += "Arquivo de preços é obrigatório\n";
+    	
+    	if(vendedores_path == null || "".equals(vendedores_path))
+    		msg += "Arquivo de vendedores é obrigatório\n";
+    	
+    	if(saida_path == null || "".equals(saida_path))
+    		msg += "Arquivo de saída é obrigatório";
+    	
+    	return msg;
     }
     
     public void sucesso (){

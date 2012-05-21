@@ -42,13 +42,13 @@ public class EntityToTextFile {
 			}
 			
 			 out.close();	
-                         System.out.println("salvou");
+                         
                          gui.sucesso();
 			
 		} catch (IOException e) {
                     
 			gui.fracasso();
-                    System.out.println("deu erro");
+                    
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
