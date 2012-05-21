@@ -10,19 +10,19 @@
  */
 package view;
 
-import com.sun.org.apache.bcel.internal.generic.D2F;
 import controller.Controller;
-import java.awt.Dialog;
-import java.awt.FileDialog;
 import java.io.File;
 import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
 
 /**
  *
  * @author PC
  */
 public class Main extends javax.swing.JFrame {
+    static Controller controller;
+    
+    
+    //static Controller controller;
 
     /**
      * Creates new form tela_principal
@@ -60,7 +60,6 @@ public class Main extends javax.swing.JFrame {
         btFileChooserPreços = new javax.swing.JButton();
         btFileChooserVendedores = new javax.swing.JButton();
         btFileChooserSaida = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFocusable(false);
@@ -148,8 +147,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("jLabel1");
-
         javax.swing.GroupLayout panel_info_fieldsLayout = new javax.swing.GroupLayout(panel_info_fields);
         panel_info_fields.setLayout(panel_info_fieldsLayout);
         panel_info_fieldsLayout.setHorizontalGroup(
@@ -165,9 +162,6 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel_info_fieldsLayout.createSequentialGroup()
-                        .addComponent(button_calc)
-                        .addContainerGap(444, Short.MAX_VALUE))
-                    .addGroup(panel_info_fieldsLayout.createSequentialGroup()
                         .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(text_field_mes, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                             .addComponent(text_field_vendas)
@@ -179,10 +173,9 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(btFileChooserVendedores, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btFileChooserPreços, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btFileChooserVendas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btFileChooserSaida, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(95, 95, 95))))
+                            .addComponent(btFileChooserSaida, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(button_calc))
+                .addContainerGap(238, Short.MAX_VALUE))
         );
         panel_info_fieldsLayout.setVerticalGroup(
             panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,8 +193,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(text_field_precos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(label_precos)
-                    .addComponent(btFileChooserPreços)
-                    .addComponent(jLabel1))
+                    .addComponent(btFileChooserPreços))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(text_field_vendedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -268,15 +260,28 @@ public class Main extends javax.swing.JFrame {
     // funções de escuta dos objs visuais
     private void button_calcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_calcActionPerformed
 
+        controller = new Controller();
+        
         String mes = text_field_mes.getText();
-        String vendas = text_field_vendas.getText();
-        String precos = text_field_precos.getText();
-        String vendedores = text_field_vendedores.getText();
-        String saida = text_field_saida.getText();
+        String vendas_path = text_field_vendas.getText();
+        String precos_path = text_field_precos.getText();
+        String vendedores_path = text_field_vendedores.getText();
+        String saida_path = text_field_saida.getText();
 
         //chama o controler.java
         //aqui vamos passar as urls que devem ser carregadas
-        Controller.init(mes, precos, vendas, vendedores, saida);
+        try {
+            System.out.println(vendas_path);
+            System.out.println(vendedores_path);
+            System.out.println(precos_path);
+            System.out.println(saida_path);
+            System.out.println(mes);
+            
+            
+            controller.calculaComissoes(mes, vendas_path, precos_path, vendedores_path, saida_path);
+        } catch (Exception e) {
+            System.out.println("erro " + e.getMessage());
+        }
     }//GEN-LAST:event_button_calcActionPerformed
 
     public String geraCaminho() {
@@ -316,28 +321,28 @@ public class Main extends javax.swing.JFrame {
 
     private void btFileChooserVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFileChooserVendasActionPerformed
         System.out.println("click");
-        fileChooser f = new fileChooser();
+        FileChooser f = new FileChooser();
         f.setDefaultCloseOperation(HIDE_ON_CLOSE);
         text_field_vendas.setText(geraCaminho());
     }//GEN-LAST:event_btFileChooserVendasActionPerformed
 
     private void btFileChooserVendedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFileChooserVendedoresActionPerformed
         System.out.println("click");
-        fileChooser f = new fileChooser();
+        FileChooser f = new FileChooser();
         f.setDefaultCloseOperation(HIDE_ON_CLOSE);
         text_field_vendedores.setText(geraCaminho());
 }//GEN-LAST:event_btFileChooserVendedoresActionPerformed
 
     private void btFileChooserPreçosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFileChooserPreçosActionPerformed
         System.out.println("click");
-        fileChooser f = new fileChooser();
+        FileChooser f = new FileChooser();
         f.setDefaultCloseOperation(HIDE_ON_CLOSE);
         text_field_precos.setText(geraCaminho());
 }//GEN-LAST:event_btFileChooserPreçosActionPerformed
 
     private void btFileChooserSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFileChooserSaidaActionPerformed
         System.out.println("click");
-        fileChooser f = new fileChooser();
+        FileChooser f = new FileChooser();
         f.setDefaultCloseOperation(HIDE_ON_CLOSE);
         text_field_saida.setText(geraDiretorio());
     }//GEN-LAST:event_btFileChooserSaidaActionPerformed
@@ -359,7 +364,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton btFileChooserVendas;
     private javax.swing.JButton btFileChooserVendedores;
     private javax.swing.JButton button_calc;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel label_informacoes;
     private javax.swing.JLabel label_mes;
     private javax.swing.JLabel label_precos;
