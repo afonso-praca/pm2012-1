@@ -13,6 +13,7 @@ package view;
 import controller.Controller;
 import java.io.File;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -40,6 +41,7 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
         panel_title = new javax.swing.JPanel();
         label_title = new javax.swing.JLabel();
         panel_info = new javax.swing.JPanel();
@@ -60,6 +62,17 @@ public class Main extends javax.swing.JFrame {
         btFileChooserPreços = new javax.swing.JButton();
         btFileChooserVendedores = new javax.swing.JButton();
         btFileChooserSaida = new javax.swing.JButton();
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFocusable(false);
@@ -260,7 +273,7 @@ public class Main extends javax.swing.JFrame {
     // funções de escuta dos objs visuais
     private void button_calcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_calcActionPerformed
 
-        controller = new Controller();
+        controller = new Controller(this);
         
         String mes = text_field_mes.getText();
         String vendas_path = text_field_vendas.getText();
@@ -279,6 +292,10 @@ public class Main extends javax.swing.JFrame {
             
             
             controller.calculaComissoes(mes, vendas_path, precos_path, vendedores_path, saida_path);
+            
+            
+            
+            
         } catch (Exception e) {
             System.out.println("erro " + e.getMessage());
         }
@@ -318,30 +335,41 @@ public class Main extends javax.swing.JFrame {
         return caminho;
 
     }
+    
+    public void sucesso (){
+        JOptionPane p = null;
+        JOptionPane.showMessageDialog(p, "Arquivo salvo!");
+        
+    }
+    
+    public void fracasso(){
+        JOptionPane p = null;
+        JOptionPane.showMessageDialog(p, "Arquivo Não foi salvo!");
+    }
 
     private void btFileChooserVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFileChooserVendasActionPerformed
-        System.out.println("click");
+        
         FileChooser f = new FileChooser();
         f.setDefaultCloseOperation(HIDE_ON_CLOSE);
         text_field_vendas.setText(geraCaminho());
     }//GEN-LAST:event_btFileChooserVendasActionPerformed
 
     private void btFileChooserVendedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFileChooserVendedoresActionPerformed
-        System.out.println("click");
+        
         FileChooser f = new FileChooser();
         f.setDefaultCloseOperation(HIDE_ON_CLOSE);
         text_field_vendedores.setText(geraCaminho());
 }//GEN-LAST:event_btFileChooserVendedoresActionPerformed
 
     private void btFileChooserPreçosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFileChooserPreçosActionPerformed
-        System.out.println("click");
+        
         FileChooser f = new FileChooser();
         f.setDefaultCloseOperation(HIDE_ON_CLOSE);
         text_field_precos.setText(geraCaminho());
 }//GEN-LAST:event_btFileChooserPreçosActionPerformed
 
     private void btFileChooserSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFileChooserSaidaActionPerformed
-        System.out.println("click");
+        
         FileChooser f = new FileChooser();
         f.setDefaultCloseOperation(HIDE_ON_CLOSE);
         text_field_saida.setText(geraDiretorio());
@@ -364,6 +392,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton btFileChooserVendas;
     private javax.swing.JButton btFileChooserVendedores;
     private javax.swing.JButton button_calc;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel label_informacoes;
     private javax.swing.JLabel label_mes;
     private javax.swing.JLabel label_precos;

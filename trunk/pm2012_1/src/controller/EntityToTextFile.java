@@ -13,11 +13,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 import model.Comissao;
+import view.Main;
 
 public class EntityToTextFile {
 		
 	
-	public void ConverteComissaoParaArquivo(List<Comissao> comissoes, String caminhoParaEscrever){
+	public void ConverteComissaoParaArquivo(List<Comissao> comissoes, String caminhoParaEscrever, Main gui){
 		
 		try {
 			
@@ -40,9 +41,14 @@ public class EntityToTextFile {
 				out.write("\n");
 			}
 			
-			 out.close();						
+			 out.close();	
+                         System.out.println("salvou");
+                         gui.sucesso();
 			
 		} catch (IOException e) {
+                    
+			gui.fracasso();
+                    System.out.println("deu erro");
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
