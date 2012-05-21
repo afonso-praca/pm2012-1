@@ -21,8 +21,7 @@ public class LoadFiles {
         
     }
 
-    public static void loadVendas(String vendasFile) {
-        
+    public static Sale[] loadVendas(String vendasFile) {
 
         Sale[] vendas = new Sale[3];
         BufferedReader vendasReader = null;
@@ -50,6 +49,7 @@ public class LoadFiles {
                     vendas[i] = venda;
                     System.out.println(venda.toString());
                 }
+                
 
                 // for (Venda v: vendas) {
                 //   System.out.println(v.toString());
@@ -63,10 +63,11 @@ public class LoadFiles {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
+        
+        return vendas;
     }
 
-    public static void loadVendedores(String vendedoresFile) {
+    public static Seller[] loadVendedores(String vendedoresFile) {
 
 
 
@@ -106,27 +107,10 @@ public class LoadFiles {
             System.out.println(e.getMessage());
         }
 
-
-
-/*        BufferedReader vendedoresReader = null;
-        try {
-            try {
-                vendedoresReader = new BufferedReader(
-                        new FileReader(vendedoresFile));
-                System.out.println(vendedoresReader.readLine());
-
-            } finally {
-                if (vendedoresReader != null) {
-                    vendedoresReader.close();
-                }
-            }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+        return vendedores;
     }
-*/
-    }
-    public static void loadPrecos(String precosFile) {
+    
+    public static Price[] loadPrecos(String precosFile) {
 
     Price[] precos = new Price[2];
     BufferedReader precosReader = null;
@@ -171,28 +155,6 @@ public class LoadFiles {
             System.out.println(e.getMessage());
         }
      
-        
-        
-        
-        
-        
-        
-        
-        /*BufferedReader precosReader = null;
-        try {
-            try {
-                precosReader = new BufferedReader(
-                        new FileReader(precosFile));
-                System.out.println(precosReader.readLine());
-
-            } finally {
-                if (precosReader != null) {
-                    precosReader.close();
-                }
-            }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }*/
-}
+        return precos;
+    }
 }

@@ -57,7 +57,6 @@ public class Main extends javax.swing.JFrame {
         text_field_saida = new javax.swing.JTextField();
         button_calc = new javax.swing.JButton();
         btFileChooserVendas = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         btFileChooserPreços = new javax.swing.JButton();
         btFileChooserVendedores = new javax.swing.JButton();
         btFileChooserSaida = new javax.swing.JButton();
@@ -78,7 +77,7 @@ public class Main extends javax.swing.JFrame {
             panel_titleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_titleLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(label_title, javax.swing.GroupLayout.DEFAULT_SIZE, 728, Short.MAX_VALUE)
+                .addComponent(label_title, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panel_titleLayout.setVerticalGroup(
@@ -127,8 +126,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("jButton1");
-
         btFileChooserPreços.setText("localizar");
         btFileChooserPreços.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,7 +161,6 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(label_saida))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
                     .addGroup(panel_info_fieldsLayout.createSequentialGroup()
                         .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(text_field_mes, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
@@ -211,9 +207,7 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(btFileChooserSaida)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(button_calc)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
 
         panel_info_fieldsLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {label_mes, label_precos, label_saida, label_vendas, label_vendedores});
@@ -275,7 +269,6 @@ public class Main extends javax.swing.JFrame {
         //chama o controler.java
         //aqui vamos passar as urls que devem ser carregadas
         Controller.init(mes, precos, vendas, vendedores, saida);
-        Controller.calc(mes, precos, vendas, vendedores, saida);
     }//GEN-LAST:event_button_calcActionPerformed
 
     public String geraCaminho() {
@@ -358,7 +351,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton btFileChooserVendas;
     private javax.swing.JButton btFileChooserVendedores;
     private javax.swing.JButton button_calc;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel label_informacoes;
     private javax.swing.JLabel label_mes;
     private javax.swing.JLabel label_precos;

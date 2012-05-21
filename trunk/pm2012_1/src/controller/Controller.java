@@ -17,17 +17,31 @@ import model.Seller;
 public class Controller {
     
     //arrays com os itens carregados
-    private static Price[] precos;
-    private static Sale[] vendas;
-    private static Seller[] vendedores;
+    private static Price[] array_precos;
+    private static Sale[] array_vendas;
+    private static Seller[] array_vendedores;
+    
+    //mes e path para saida
+    private static String month;
+    private static String output;
         
     //functions
     public static void init(String mes, String precos, String vendas, String vendedores, String saida){
         //load files
-        LoadFiles.loadVendas(vendas);
-        LoadFiles.loadPrecos(precos);
-        LoadFiles.loadVendedores(vendedores);
+        array_vendas = LoadFiles.loadVendas(vendas);
+        array_precos = LoadFiles.loadPrecos(precos);
+        array_vendedores = LoadFiles.loadVendedores(vendedores);
         
+        //
+        month = mes;
+        output = saida;
+        
+        System.out.println(array_precos[0]);
+        System.out.println(array_vendas);
+        System.out.println(array_vendedores);
+        
+        //
+        //calc(mes, precos, vendas, vendedores, saida);
     }
     
     public static void calc(String mes, String precos, String vendas, String vendedores, String saida){
