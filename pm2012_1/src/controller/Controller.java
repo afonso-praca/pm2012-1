@@ -9,19 +9,22 @@ import model.Comissao;
 import model.Preco;
 import model.Venda;
 import model.Vendedor;
+import view.Main;
 
 public class Controller {
     
         public static TextFileToEntity LeitorDeArquivo;
 	public static EntityToTextFile EscritorDeArquivo;
 	public static CalculaComissaoService CalculadorDeComissaoService;
+        public static Main gui;
 	
 	public static List<Venda> Vendas;
 	public static List<Preco> Precos;
 	public static List<Vendedor> Vendedores;
 	public static List<Comissao> Comissoes;
 
-	public Controller(){
+	public Controller(Main _gui){
+                gui = _gui;
 		LeitorDeArquivo = new TextFileToEntity();
 		EscritorDeArquivo = new EntityToTextFile();
 		CalculadorDeComissaoService = new CalculaComissaoService();
@@ -45,10 +48,10 @@ public class Controller {
 		
 		
 		if (Comissoes != null){
-			EscritorDeArquivo.ConverteComissaoParaArquivo(Comissoes, saidaPath);		
+			EscritorDeArquivo.ConverteComissaoParaArquivo(Comissoes, saidaPath, gui);	
+                        
 		}
 		else{
-			
 			throw new Exception("Um erro ocorreu no calculo de Comissão.");
 		}
 		}
