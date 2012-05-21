@@ -60,6 +60,7 @@ public class Main extends javax.swing.JFrame {
         btFileChooserPreços = new javax.swing.JButton();
         btFileChooserVendedores = new javax.swing.JButton();
         btFileChooserSaida = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFocusable(false);
@@ -147,6 +148,8 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout panel_info_fieldsLayout = new javax.swing.GroupLayout(panel_info_fields);
         panel_info_fields.setLayout(panel_info_fieldsLayout);
         panel_info_fieldsLayout.setHorizontalGroup(
@@ -162,6 +165,9 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel_info_fieldsLayout.createSequentialGroup()
+                        .addComponent(button_calc)
+                        .addContainerGap(444, Short.MAX_VALUE))
+                    .addGroup(panel_info_fieldsLayout.createSequentialGroup()
                         .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(text_field_mes, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                             .addComponent(text_field_vendas)
@@ -173,9 +179,10 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(btFileChooserVendedores, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btFileChooserPreços, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btFileChooserVendas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btFileChooserSaida, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(button_calc))
-                .addContainerGap(238, Short.MAX_VALUE))
+                            .addComponent(btFileChooserSaida, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addGap(95, 95, 95))))
         );
         panel_info_fieldsLayout.setVerticalGroup(
             panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,7 +200,8 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(text_field_precos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(label_precos)
-                    .addComponent(btFileChooserPreços))
+                    .addComponent(btFileChooserPreços)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(text_field_vendedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -351,6 +359,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton btFileChooserVendas;
     private javax.swing.JButton btFileChooserVendedores;
     private javax.swing.JButton button_calc;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel label_informacoes;
     private javax.swing.JLabel label_mes;
     private javax.swing.JLabel label_precos;
