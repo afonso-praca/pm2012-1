@@ -1,6 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Classe controladora da aplicação
+ * TODO -> receber por parâmetro as referencias a leitores e escritores
  */
 package controller;
 
