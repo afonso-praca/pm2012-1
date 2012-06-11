@@ -10,17 +10,17 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import controller.CalculaComissaoCategoriaDois;
-import controller.CalculaComissaoCategoriaUm;
+import model.CalculaComissaoCategoriaDois;
+import model.CalculaComissaoCategoriaUm;
 import model.Comissao;
 
 /**
  *
  * @author Taís
  */
-import controller.CalculaComissaoCategoriaDois;
-import controller.CalculaComissaoCategoriaDois;
-import controller.CalculaComissaoCategoriaUm;
+import model.CalculaComissaoCategoriaDois;
+import model.CalculaComissaoCategoriaDois;
+import model.CalculaComissaoCategoriaUm;
 import model.Comissao;
 
 public class CalculaComissaoCategoriaDoisTest extends CalculaComissaoTesteBase{

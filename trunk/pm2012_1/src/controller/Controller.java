@@ -4,6 +4,9 @@
  */
 package controller;
 
+import model.EntityToTextFile;
+import model.TextFileToEntity;
+import model.CalculaComissaoService;
 import java.util.List;
 import model.Comissao;
 import model.Preco;
