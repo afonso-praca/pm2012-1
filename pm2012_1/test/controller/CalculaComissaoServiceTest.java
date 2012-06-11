@@ -15,8 +15,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-import controller.CalculaComissaoService;
-import controller.CalculaComissaoService;
+import model.CalculaComissaoService;
+import model.CalculaComissaoService;
 import java.util.ArrayList;
 import model.Comissao;
 

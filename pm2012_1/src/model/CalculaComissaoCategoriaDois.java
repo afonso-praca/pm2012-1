@@ -1,14 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package controller;
+
+package model;
  
  import model.Comissao;
-/**
- *
- * @author Taís
- */
+
 public class CalculaComissaoCategoriaDois implements ICalculaComissao {
 
 	@Override
@@ -20,7 +14,10 @@ public class CalculaComissaoCategoriaDois implements ICalculaComissao {
 		
 		 if (valorTotalVendas <= 2000.00){
 			 valorComissao = (valorTotalVendas * 0.1); 
-          }else if((valorTotalVendas>2000.00) && (valorTotalVendas <= 4000.00)){
+          }else if((valorTotalVendas>2000.00) && 
+                  (valorTotalVendas <= 4000.00)){
+              
+              
         	  valorComissao = (valorTotalVendas * 0.2);
           }else if ( valorTotalVendas > 4000.00){
         	  valorComissao = (valorTotalVendas * 0.3);

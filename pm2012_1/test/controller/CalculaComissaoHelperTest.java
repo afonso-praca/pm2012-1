@@ -15,8 +15,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import controller.CalculaComissaoHelper;
-import controller.CalculaComissaoHelper;
+import model.CalculaComissaoHelper;
+import model.CalculaComissaoHelper;
 import model.Comissao;
 
 public class CalculaComissaoHelperTest extends CalculaComissaoTesteBase{

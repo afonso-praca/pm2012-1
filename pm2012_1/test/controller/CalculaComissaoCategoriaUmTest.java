@@ -10,10 +10,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import controller.CalculaComissaoCategoriaUm;
+import model.CalculaComissaoCategoriaUm;
 import model.Comissao;
-import controller.CalculaComissaoCategoriaUm;
-import controller.CalculaComissaoCategoriaUm;
+import model.CalculaComissaoCategoriaUm;
+import model.CalculaComissaoCategoriaUm;
 import model.Comissao;
 /**
  *
