@@ -26,8 +26,7 @@ public class Controller {
 	public static List<Vendedor> Vendedores;
 	public static List<Comissao> Comissoes;
 
-	public Controller(Main _gui){
-                gui = _gui;
+	public Controller(){
 		LeitorDeArquivo = new TextFileToEntity();
 		EscritorDeArquivo = new EntityToTextFile();
 		CalculadorDeComissaoService = new CalculaComissaoService();
@@ -51,7 +50,7 @@ public class Controller {
 		
 		
 		if (Comissoes != null){
-			EscritorDeArquivo.ConverteComissaoParaArquivo(Comissoes, saidaPath, gui);	
+			EscritorDeArquivo.ConverteComissaoParaArquivo(Comissoes, saidaPath);	
                         
 		}
 		else{
