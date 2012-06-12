@@ -14,17 +14,17 @@ import controller.Controller;
 import java.io.File;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import org.w3c.dom.events.EventException;
 
 /**
  *
  * @author PC
  */
 public class Main extends javax.swing.JFrame {
-    static Controller controller;
-    
-    
-    //static Controller controller;
 
+    static Controller controller;
+
+    //static Controller controller;
     /**
      * Creates new form tela_principal
      */
@@ -273,20 +273,21 @@ public class Main extends javax.swing.JFrame {
     // funções de escuta dos objs visuais
     private void button_calcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_calcActionPerformed
 
-        controller = new Controller(this);
-        
+        controller = new Controller();
+
         String mes = text_field_mes.getText();
-        String msg = validaMes(mes); 
-            if("valido".equals(msg)){       	
+        String msg = validaMes(mes);
+
+        if ("valido".equals(msg)) {
             String vendas_path = text_field_vendas.getText();
             String precos_path = text_field_precos.getText();
             String vendedores_path = text_field_vendedores.getText();
             String saida_path = text_field_saida.getText();
 
-            
+
             String msgArquivos = validaArquivos(vendas_path, precos_path, vendedores_path, saida_path);
-        	if("".equals(msgArquivos)){       		
-        	
+            
+            if ("".equals(msgArquivos)) {
                 //chama o controler.java
                 //aqui vamos passar as urls que devem ser carregadas
                 try {
@@ -297,15 +298,16 @@ public class Main extends javax.swing.JFrame {
                     System.out.println(mes);
 
                     controller.calculaComissoes(mes, vendas_path, precos_path, vendedores_path, saida_path);
-        			
-        		} catch (Exception e) {
-        			System.out.println("erro " + e.getMessage());
-        		}
-        	}else{
-        		JOptionPane.showMessageDialog(this, msgArquivos);
-        	}        	
-        }else{
-        	JOptionPane.showMessageDialog(this, msg);
+                    JOptionPane.showMessageDialog(this, "Arquivo salvo com sucesso !!!!!!!!!!!!");
+                } catch (Exception e) {
+                    System.out.println("erro " + e.getMessage());
+                    JOptionPane.showMessageDialog(this, "Erro, por favor verifique as entradas","ERRO", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, msgArquivos);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, msg);
         }
         //JOptionPane.showMessageDialog(saida_path,"Arquivo criado com sucesso!");
     }//GEN-LAST:event_button_calcActionPerformed
@@ -344,107 +346,111 @@ public class Main extends javax.swing.JFrame {
         return caminho;
 
     }
-    
-        private String validaMes(String mes){
-    	String msg = "valido";
-    	//usando a comparação com aspas "" para evitar null pointer exception se a variável mês vier nula
-    	if(!"".equals(mes)){
-    		try{
-    			int mesNumero = Integer.parseInt(mes);
-    		}catch(NumberFormatException ex){
-    			msg = "Mês informado é inválido!";
-    		}
-    	}else{
-    		msg = "Preenchimento do mês é obrigatório!";
-    	}
-    	
-    	return msg;
-    }
-    
-    private String converteMes(String mes){
-    	int mesNumero = Integer.parseInt(mes);
-    	switch (mesNumero) {
-		case 1:
-			return "Janeiro";
-		case 2:
-			return "Fevereiro";
-		case 3:
-			return "Março";
-		case 4:
-			return "Abril";
-                case 5:
-			return "Maio";
-                case 6:
-			return "Junho";
-                case 7:
-			return "Julho";
-                case 8:
-			return "Agosto";
-                case 9:
-			return "Setembro";
-                case 10:
-			return "Outubro";
-                case 11:
-			return "Novembro";
-                case 12:
-			return "Dezembro";
-		default:
-			return "Mês Inválido";
-		}
-    }
-    
-    private String validaArquivos(String vendas_path, String precos_path, String vendedores_path, String saida_path){
-    	String msg = "";
-    	
-    	if(vendas_path == null || "".equals(vendas_path))
-    		msg = "Arquivo de vendas é obrigatório\n";
 
-    	if(precos_path == null || "".equals(precos_path))
-    		msg += "Arquivo de preços é obrigatório\n";
-    	
-    	if(vendedores_path == null || "".equals(vendedores_path))
-    		msg += "Arquivo de vendedores é obrigatório\n";
-    	
-    	if(saida_path == null || "".equals(saida_path))
-    		msg += "Arquivo de saída é obrigatório";
-    	
-    	return msg;
+    private String validaMes(String mes) {
+        String msg = "valido";
+        //usando a comparação com aspas "" para evitar null pointer exception se a variável mês vier nula
+        if (!"".equals(mes)) {
+            try {
+                int mesNumero = Integer.parseInt(mes);
+            } catch (NumberFormatException ex) {
+                msg = "Mês informado é inválido!";
+            }
+        } else {
+            msg = "Preenchimento do mês é obrigatório!";
+        }
+
+        return msg;
     }
-    
-    public void sucesso (){
+
+    private String converteMes(String mes) {
+        int mesNumero = Integer.parseInt(mes);
+        switch (mesNumero) {
+            case 1:
+                return "Janeiro";
+            case 2:
+                return "Fevereiro";
+            case 3:
+                return "Março";
+            case 4:
+                return "Abril";
+            case 5:
+                return "Maio";
+            case 6:
+                return "Junho";
+            case 7:
+                return "Julho";
+            case 8:
+                return "Agosto";
+            case 9:
+                return "Setembro";
+            case 10:
+                return "Outubro";
+            case 11:
+                return "Novembro";
+            case 12:
+                return "Dezembro";
+            default:
+                return "Mês Inválido";
+        }
+    }
+
+    private String validaArquivos(String vendas_path, String precos_path, String vendedores_path, String saida_path) {
+        String msg = "";
+
+        if (vendas_path == null || "".equals(vendas_path)) {
+            msg = "Arquivo de vendas é obrigatório\n";
+        }
+
+        if (precos_path == null || "".equals(precos_path)) {
+            msg += "Arquivo de preços é obrigatório\n";
+        }
+
+        if (vendedores_path == null || "".equals(vendedores_path)) {
+            msg += "Arquivo de vendedores é obrigatório\n";
+        }
+
+        if (saida_path == null || "".equals(saida_path)) {
+            msg += "Arquivo de saída é obrigatório";
+        }
+
+        return msg;
+    }
+
+    public void sucesso() {
         JOptionPane p = null;
         JOptionPane.showMessageDialog(p, "Arquivo salvo!");
-        
+
     }
-    
-    public void fracasso(){
+
+    public void fracasso() {
         JOptionPane p = null;
         JOptionPane.showMessageDialog(p, "Arquivo Não foi salvo!");
     }
 
     private void btFileChooserVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFileChooserVendasActionPerformed
-        
+
         FileChooser f = new FileChooser();
         f.setDefaultCloseOperation(HIDE_ON_CLOSE);
         text_field_vendas.setText(geraCaminho());
     }//GEN-LAST:event_btFileChooserVendasActionPerformed
 
     private void btFileChooserVendedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFileChooserVendedoresActionPerformed
-        
+
         FileChooser f = new FileChooser();
         f.setDefaultCloseOperation(HIDE_ON_CLOSE);
         text_field_vendedores.setText(geraCaminho());
 }//GEN-LAST:event_btFileChooserVendedoresActionPerformed
 
     private void btFileChooserPreçosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFileChooserPreçosActionPerformed
-        
+
         FileChooser f = new FileChooser();
         f.setDefaultCloseOperation(HIDE_ON_CLOSE);
         text_field_precos.setText(geraCaminho());
 }//GEN-LAST:event_btFileChooserPreçosActionPerformed
 
     private void btFileChooserSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFileChooserSaidaActionPerformed
-        
+
         FileChooser f = new FileChooser();
         f.setDefaultCloseOperation(HIDE_ON_CLOSE);
         text_field_saida.setText(geraDiretorio());

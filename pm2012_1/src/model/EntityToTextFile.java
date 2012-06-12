@@ -18,7 +18,7 @@ import view.Main;
 public class EntityToTextFile {
 		
 	
-	public void ConverteComissaoParaArquivo(List<Comissao> comissoes, String caminhoParaEscrever, Main gui){
+	public void ConverteComissaoParaArquivo(List<Comissao> comissoes, String caminhoParaEscrever){
 		
 		try {
 			
@@ -41,14 +41,9 @@ public class EntityToTextFile {
 				out.write("\n");
 			}
 			
-			 out.close();	
-                         
-                         gui.sucesso();
+			 out.close();
 			
 		} catch (IOException e) {
-                    
-			gui.fracasso();
-                    
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
