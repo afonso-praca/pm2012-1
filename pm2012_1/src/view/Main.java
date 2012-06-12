@@ -277,7 +277,7 @@ public class Main extends javax.swing.JFrame {
 
         String mes = text_field_mes.getText();
         String msg = validaMes(mes);
-
+        
         if ("valido".equals(msg)) {
             String vendas_path = text_field_vendas.getText();
             String precos_path = text_field_precos.getText();
@@ -298,7 +298,8 @@ public class Main extends javax.swing.JFrame {
                     System.out.println(mes);
 
                     controller.calculaComissoes(mes, vendas_path, precos_path, vendedores_path, saida_path);
-                    JOptionPane.showMessageDialog(this, "Arquivo salvo com sucesso !!!!!!!!!!!!");
+                    JOptionPane.showMessageDialog(this, "Arquivo salvo com sucesso !");
+                    
                 } catch (Exception e) {
                     System.out.println("erro " + e.getMessage());
                     JOptionPane.showMessageDialog(this, "Erro, por favor verifique as entradas","ERRO", JOptionPane.ERROR_MESSAGE);
@@ -415,17 +416,6 @@ public class Main extends javax.swing.JFrame {
         }
 
         return msg;
-    }
-
-    public void sucesso() {
-        JOptionPane p = null;
-        JOptionPane.showMessageDialog(p, "Arquivo salvo!");
-
-    }
-
-    public void fracasso() {
-        JOptionPane p = null;
-        JOptionPane.showMessageDialog(p, "Arquivo Não foi salvo!");
     }
 
     private void btFileChooserVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFileChooserVendasActionPerformed
