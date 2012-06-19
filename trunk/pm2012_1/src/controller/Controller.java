@@ -8,10 +8,10 @@ import model.EntityToTextFile;
 import model.TextFileToEntity;
 import model.CalculaComissaoService;
 import java.util.List;
-import model.Comissao;
-import model.Preco;
-import model.Venda;
-import model.Vendedor;
+import model.entity.Comissao;
+import model.entity.Preco;
+import model.entity.Venda;
+import model.entity.Vendedor;
 import view.Main;
 
 public class Controller {
