@@ -11,10 +11,10 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import model.CalculaComissaoCategoriaUm;
-import model.Comissao;
+import model.entity.Comissao;
 import model.CalculaComissaoCategoriaUm;
 import model.CalculaComissaoCategoriaUm;
-import model.Comissao;
+import model.entity.Comissao;
 /**
  *
  * @author Taís
