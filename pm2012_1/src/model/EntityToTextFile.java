@@ -12,7 +12,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
-import model.Comissao;
+import model.entity.Comissao;
 import view.Main;
 
 public class EntityToTextFile {
