@@ -12,7 +12,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import model.CalculaComissaoCategoriaDois;
 import model.CalculaComissaoCategoriaUm;
-import model.Comissao;
+import model.entity.Comissao;
 
 /**
  *
@@ -21,7 +21,7 @@ import model.Comissao;
 import model.CalculaComissaoCategoriaDois;
 import model.CalculaComissaoCategoriaDois;
 import model.CalculaComissaoCategoriaUm;
-import model.Comissao;
+import model.entity.Comissao;
 
 public class CalculaComissaoCategoriaDoisTest extends CalculaComissaoTesteBase{
 

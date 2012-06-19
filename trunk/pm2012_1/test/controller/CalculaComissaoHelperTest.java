@@ -4,9 +4,9 @@
  */
 package controller;
 
-import model.Preco;
-import model.Venda;
-import model.Vendedor;
+import model.entity.Preco;
+import model.entity.Venda;
+import model.entity.Vendedor;
 import java.util.HashMap;
 import java.util.List;
 import org.junit.After;
@@ -17,7 +17,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import model.CalculaComissaoHelper;
 import model.CalculaComissaoHelper;
-import model.Comissao;
+import model.entity.Comissao;
 
 public class CalculaComissaoHelperTest extends CalculaComissaoTesteBase{
 
