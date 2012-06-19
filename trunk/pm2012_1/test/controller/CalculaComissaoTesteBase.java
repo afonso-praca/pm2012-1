@@ -12,9 +12,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
-import model.Preco;
-import model.Venda;
-import model.Vendedor;
+import model.entity.Preco;
+import model.entity.Venda;
+import model.entity.Vendedor;
 import org.junit.Before;
 
 
