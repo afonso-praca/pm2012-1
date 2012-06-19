@@ -5,10 +5,10 @@
 package model;
 
 import java.util.List;
-import model.Comissao;
-import model.Preco;
-import model.Venda;
-import model.Vendedor;
+import model.entity.Comissao;
+import model.entity.Preco;
+import model.entity.Venda;
+import model.entity.Vendedor;
 
 public class CalculaComissaoService {
 	

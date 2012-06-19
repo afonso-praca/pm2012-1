@@ -4,7 +4,7 @@
  */
 package model;
 
-import model.Comissao;
+import model.entity.Comissao;
 
 public interface ICalculaComissao {
 
