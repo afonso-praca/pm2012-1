@@ -22,6 +22,7 @@ import org.w3c.dom.events.EventException;
  */
 public class Main extends javax.swing.JFrame {
 
+    //view
     static Controller controller;
 
     //static Controller controller;
