@@ -268,6 +268,11 @@ public class Main extends javax.swing.JFrame {
 
         buttonGroup1.add(rb_XML);
         rb_XML.setText("XML");
+        rb_XML.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rb_XMLActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel_radioButtonLayout = new javax.swing.GroupLayout(jPanel_radioButton);
         jPanel_radioButton.setLayout(jPanel_radioButtonLayout);
@@ -521,29 +526,60 @@ public class Main extends javax.swing.JFrame {
         text_field_saida.setText(geraDiretorio());
     }//GEN-LAST:event_btFileChooserSaidaActionPerformed
 
-    private void rb_TXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_TXTActionPerformed
-
-        if ((rb_TXT.isSelected()) || (rb_XML.isSelected())) {
-
-            Component [] comps = panel_info_fields.getComponents();
-            for (int i = 0; i < comps.length; i++) {
-                System.out.println(comps[i]);
-                if (comps[i] instanceof javax.swing.JTextField
-                        ||comps[i] instanceof javax.swing.JLabel
-                        || comps[i] instanceof javax.swing.JButton) {
-                            comps[i].setEnabled(true);
-                }
+    public void enabledPanelFiles() {
+        Component[] comps = panel_info_fields.getComponents();
+        for (int i = 0; i < comps.length; i++) {
+            System.out.println(comps[i]);
+            if (comps[i] instanceof javax.swing.JTextField
+                    || comps[i] instanceof javax.swing.JLabel
+                    || comps[i] instanceof javax.swing.JButton) {
+                comps[i].setEnabled(true);
             }
         }
+    }
+
+    public String selectTypeFile() {
+
+        try {
+
+
+            if (rb_TXT.isSelected()) {
+
+                enabledPanelFiles();
+                return "TXT";
+
+            }
+
+            if (rb_XML.isSelected()) {
+
+                enabledPanelFiles();
+                return "XML";
+
+            }
+        } catch (Exception e) {
+            
+            return e.getMessage();
+            
+        }
+        return("Deu Problema");
+        
+    }
+
+    private void rb_TXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_TXTActionPerformed
+
+        selectTypeFile();
+        
     }//GEN-LAST:event_rb_TXTActionPerformed
 
-        /**
-         * @param args the command line arguments
-         */
-    
+    private void rb_XMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_XMLActionPerformed
 
-    
+        selectTypeFile();
+        
+    }//GEN-LAST:event_rb_XMLActionPerformed
 
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
