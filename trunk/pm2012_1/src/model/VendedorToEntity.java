@@ -10,7 +10,7 @@ import model.entity.Vendedor;
 
 /**
  *
- * @author labccet
+ * @author Afonso
  */
 public class VendedorToEntity extends CSVToEntity<Vendedor> {
     

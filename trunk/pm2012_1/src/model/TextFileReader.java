@@ -1,7 +1,7 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Classe que lê um arquivo CSV e retorna uma lista de Strings[]
  */
+
 package model;
 
 import java.io.BufferedReader;

@@ -12,7 +12,7 @@ import model.entity.Preco;
 
 /**
  *
- * @author labccet
+ * @author Afonso
  */
 public class PrecoToEntity extends CSVToEntity<Preco> {
     
