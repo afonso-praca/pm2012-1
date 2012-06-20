@@ -11,8 +11,10 @@
 package view;
 
 import controller.Controller;
+import java.awt.Component;
 import java.io.File;
 import javax.swing.JFileChooser;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import org.w3c.dom.events.EventException;
 
@@ -43,6 +45,8 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         jDialog1 = new javax.swing.JDialog();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
         panel_title = new javax.swing.JPanel();
         label_title = new javax.swing.JLabel();
         panel_info = new javax.swing.JPanel();
@@ -63,6 +67,10 @@ public class Main extends javax.swing.JFrame {
         btFileChooserPreços = new javax.swing.JButton();
         btFileChooserVendedores = new javax.swing.JButton();
         btFileChooserSaida = new javax.swing.JButton();
+        jPanel_radioButton = new javax.swing.JPanel();
+        label_leitura = new javax.swing.JLabel();
+        rb_TXT = new javax.swing.JRadioButton();
+        rb_XML = new javax.swing.JRadioButton();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -91,7 +99,7 @@ public class Main extends javax.swing.JFrame {
             panel_titleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_titleLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(label_title, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
+                .addComponent(label_title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panel_titleLayout.setVerticalGroup(
@@ -111,22 +119,37 @@ public class Main extends javax.swing.JFrame {
 
         label_mes.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         label_mes.setText("Mês");
+        label_mes.setEnabled(false);
 
         label_vendas.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         label_vendas.setText("Arquivo de Vendas");
+        label_vendas.setEnabled(false);
 
         label_precos.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         label_precos.setText("Arquivo de Preços");
+        label_precos.setEnabled(false);
 
         label_vendedores.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         label_vendedores.setText("Arquivo de Vendedores");
+        label_vendedores.setEnabled(false);
 
         label_saida.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         label_saida.setText("Arquivo de Saida");
+        label_saida.setEnabled(false);
 
+        text_field_mes.setEnabled(false);
         text_field_mes.setName(""); // NOI18N
 
+        text_field_vendas.setEnabled(false);
+
+        text_field_precos.setEnabled(false);
+
+        text_field_vendedores.setEnabled(false);
+
+        text_field_saida.setEnabled(false);
+
         button_calc.setText("Calcular");
+        button_calc.setEnabled(false);
         button_calc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button_calcActionPerformed(evt);
@@ -134,6 +157,7 @@ public class Main extends javax.swing.JFrame {
         });
 
         btFileChooserVendas.setText("localizar");
+        btFileChooserVendas.setEnabled(false);
         btFileChooserVendas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btFileChooserVendasActionPerformed(evt);
@@ -141,6 +165,7 @@ public class Main extends javax.swing.JFrame {
         });
 
         btFileChooserPreços.setText("localizar");
+        btFileChooserPreços.setEnabled(false);
         btFileChooserPreços.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btFileChooserPreçosActionPerformed(evt);
@@ -148,6 +173,7 @@ public class Main extends javax.swing.JFrame {
         });
 
         btFileChooserVendedores.setText("localizar");
+        btFileChooserVendedores.setEnabled(false);
         btFileChooserVendedores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btFileChooserVendedoresActionPerformed(evt);
@@ -155,6 +181,7 @@ public class Main extends javax.swing.JFrame {
         });
 
         btFileChooserSaida.setText("Salvar");
+        btFileChooserSaida.setEnabled(false);
         btFileChooserSaida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btFileChooserSaidaActionPerformed(evt);
@@ -189,7 +216,7 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(btFileChooserVendas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btFileChooserSaida, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(button_calc))
-                .addContainerGap(238, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
         panel_info_fieldsLayout.setVerticalGroup(
             panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,10 +248,50 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(btFileChooserSaida)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(button_calc)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         panel_info_fieldsLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {label_mes, label_precos, label_saida, label_vendas, label_vendedores});
+
+        jPanel_radioButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        label_leitura.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        label_leitura.setText("Tipo de Arquivo:");
+
+        buttonGroup1.add(rb_TXT);
+        rb_TXT.setText("TXT");
+        rb_TXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rb_TXTActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(rb_XML);
+        rb_XML.setText("XML");
+
+        javax.swing.GroupLayout jPanel_radioButtonLayout = new javax.swing.GroupLayout(jPanel_radioButton);
+        jPanel_radioButton.setLayout(jPanel_radioButtonLayout);
+        jPanel_radioButtonLayout.setHorizontalGroup(
+            jPanel_radioButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_radioButtonLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(jPanel_radioButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_leitura)
+                    .addComponent(rb_TXT, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rb_XML, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(65, Short.MAX_VALUE))
+        );
+        jPanel_radioButtonLayout.setVerticalGroup(
+            jPanel_radioButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_radioButtonLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(label_leitura)
+                .addGap(18, 18, 18)
+                .addComponent(rb_TXT)
+                .addGap(18, 18, 18)
+                .addComponent(rb_XML)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout panel_infoLayout = new javax.swing.GroupLayout(panel_info);
         panel_info.setLayout(panel_infoLayout);
@@ -233,8 +300,13 @@ public class Main extends javax.swing.JFrame {
             .addGroup(panel_infoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panel_infoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panel_info_fields, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(label_informacoes))
+                    .addGroup(panel_infoLayout.createSequentialGroup()
+                        .addComponent(label_informacoes)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(panel_infoLayout.createSequentialGroup()
+                        .addComponent(jPanel_radioButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                        .addComponent(panel_info_fields, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         panel_infoLayout.setVerticalGroup(
@@ -242,9 +314,11 @@ public class Main extends javax.swing.JFrame {
             .addGroup(panel_infoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(label_informacoes)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(panel_info_fields, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addGroup(panel_infoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(panel_info_fields, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel_radioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -278,7 +352,7 @@ public class Main extends javax.swing.JFrame {
 
         String mes = text_field_mes.getText();
         String msg = validaMes(mes);
-        
+
         if ("valido".equals(msg)) {
             String vendas_path = text_field_vendas.getText();
             String precos_path = text_field_precos.getText();
@@ -287,7 +361,7 @@ public class Main extends javax.swing.JFrame {
 
 
             String msgArquivos = validaArquivos(vendas_path, precos_path, vendedores_path, saida_path);
-            
+
             if ("".equals(msgArquivos)) {
                 //chama o controler.java
                 //aqui vamos passar as urls que devem ser carregadas
@@ -300,10 +374,10 @@ public class Main extends javax.swing.JFrame {
 
                     controller.calculaComissoes(mes, vendas_path, precos_path, vendedores_path, saida_path);
                     JOptionPane.showMessageDialog(this, "Arquivo salvo com sucesso !");
-                    
+
                 } catch (Exception e) {
                     System.out.println("erro " + e.getMessage());
-                    JOptionPane.showMessageDialog(this, "Erro, por favor verifique as entradas","ERRO", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Erro, por favor verifique as entradas", "ERRO", JOptionPane.ERROR_MESSAGE);
                 }
             } else {
                 JOptionPane.showMessageDialog(this, msgArquivos);
@@ -447,9 +521,29 @@ public class Main extends javax.swing.JFrame {
         text_field_saida.setText(geraDiretorio());
     }//GEN-LAST:event_btFileChooserSaidaActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void rb_TXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_TXTActionPerformed
+
+        if ((rb_TXT.isSelected()) || (rb_XML.isSelected())) {
+
+            Component[] comps = panel_info_fields.getComponents();
+            for (int i = 0; i < comps.length; i++) {
+                System.out.println(comps[i]);
+                if (comps[i] instanceof javax.swing.JTextField
+                        ||comps[i] instanceof javax.swing.JLabel
+                        || comps[i] instanceof javax.swing.JButton) {
+                            comps[i].setEnabled(true);
+                }
+            }
+        }
+    }//GEN-LAST:event_rb_TXTActionPerformed
+
+        /**
+         * @param args the command line arguments
+         */
+    
+
+    
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
@@ -463,9 +557,13 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton btFileChooserSaida;
     private javax.swing.JButton btFileChooserVendas;
     private javax.swing.JButton btFileChooserVendedores;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JButton button_calc;
     private javax.swing.JDialog jDialog1;
+    private javax.swing.JPanel jPanel_radioButton;
     private javax.swing.JLabel label_informacoes;
+    private javax.swing.JLabel label_leitura;
     private javax.swing.JLabel label_mes;
     private javax.swing.JLabel label_precos;
     private javax.swing.JLabel label_saida;
@@ -475,6 +573,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel panel_info;
     private javax.swing.JPanel panel_info_fields;
     private javax.swing.JPanel panel_title;
+    private javax.swing.JRadioButton rb_TXT;
+    private javax.swing.JRadioButton rb_XML;
     private javax.swing.JTextField text_field_mes;
     private javax.swing.JTextField text_field_precos;
     private javax.swing.JTextField text_field_saida;
