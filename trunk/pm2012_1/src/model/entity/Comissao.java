@@ -60,12 +60,12 @@ public class Comissao extends BaseEntity {
 	public void setComissao(double comissao) {
 		Comissao = comissao;
 	}
-	public void setSumTotalVendidoProdutoB(double totalVendidoProdutoB2) {
-		TotalVendidoProdutoB+= totalVendidoProdutoB2;
+	public void setSumTotalVendidoProdutoB(double totalVendidoB) {
+		TotalVendidoProdutoB+= totalVendidoB;
 		
 	}
-	public void setSumTotalVendidoProdutoC(double totalVendidoProdutoC2) {		
-		TotalVendidoProdutoC+=totalVendidoProdutoC2;		
+	public void setSumTotalVendidoProdutoC(double totalVendidoC) {		
+		TotalVendidoProdutoC+=totalVendidoC;		
 	}
 	
 	
