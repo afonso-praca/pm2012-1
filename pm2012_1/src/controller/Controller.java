@@ -4,22 +4,21 @@
  */
 package controller;
 
-import model.EntityToTextFile;
-import model.TextFileToEntity;
-import model.CalculaComissaoService;
 import java.util.List;
+import model.*;
 import model.entity.Comissao;
 import model.entity.Preco;
 import model.entity.Venda;
 import model.entity.Vendedor;
-import view.Main;
 
 public class Controller {
     
-        public static TextFileToEntity LeitorDeArquivo;
+        public static VendaToEntity vendaReader;
+        public static VendedorToEntity vendedorReader;
+        public static PrecoToEntity precoReader;
+        
 	public static EntityToTextFile EscritorDeArquivo;
 	public static CalculaComissaoService CalculadorDeComissaoService;
-        public static Main gui;
 	
 	public static List<Venda> Vendas;
 	public static List<Preco> Precos;
@@ -27,44 +26,40 @@ public class Controller {
 	public static List<Comissao> Comissoes;
 
 	public Controller(){
-		LeitorDeArquivo = new TextFileToEntity();
-		EscritorDeArquivo = new EntityToTextFile();
+		vendaReader = new VendaToEntity();
+                vendedorReader = new VendedorToEntity();
+                precoReader = new PrecoToEntity();
+		
+                EscritorDeArquivo = new EntityToTextFile();
 		CalculadorDeComissaoService = new CalculaComissaoService();
 	}
 	
 	public static void calculaComissoes(String mes, String vendasPath,
-			String precosPath, String vendedoresPath, String saidaPath) throws Exception {
+            String precosPath, String vendedoresPath, String saidaPath) throws Exception {
+            
+		try {
+                    Vendas = vendaReader.ConverteArquivoDoModelo(vendasPath);
+                    Precos = precoReader.ConverteArquivoDoModelo(precosPath);
+                    Vendedores = vendedorReader.ConverteArquivoDoModelo(vendedoresPath);
 		
-		try{
-		Vendas = LeitorDeArquivo.ConverteArquivoVendaParaEntidade(vendasPath);
-		Precos = LeitorDeArquivo.ConverteArquivoPrecoParaEntidade(precosPath);
-		Vendedores = LeitorDeArquivo.ConverteArquivoVendedorParaEntidade(vendedoresPath);
+                    if (Vendas!= null && Precos!= null && Vendedores!= null){
+                        Comissoes=CalculadorDeComissaoService.CalculaComissoes(mes, Vendas, Precos, Vendedores);
+                    } else {
+                        throw new Exception("Um erro ocoreu na leitua dos arquivos.");
+                    }
 		
-		if (Vendas!= null && Precos!= null && Vendedores!= null){
-		
-			Comissoes=CalculadorDeComissaoService.CalculaComissoes(mes, Vendas, Precos, Vendedores);
-		
-		}else {
-			throw new Exception("Um erro ocoreu na leitua dos arquivos.");
-		}
-		
-		
-		if (Comissoes != null){
-			EscritorDeArquivo.ConverteComissaoParaArquivo(Comissoes, saidaPath);	
-                        
-		}
-		else{
-			throw new Exception("Um erro ocorreu no calculo de Comissão.");
-		}
+                    if (Comissoes != null){
+                        EscritorDeArquivo.ConverteComissaoParaArquivo(Comissoes, saidaPath);
+                    }
+                    else {
+                        throw new Exception("Um erro ocorreu no calculo de Comissão.");
+                    }
 		}
 		catch(Exception e){
-			throw e;
+                    System.out.println(e.getMessage());
+                    throw e;
 		}
 	}
-
-	
-	
-	
 }
 
 
