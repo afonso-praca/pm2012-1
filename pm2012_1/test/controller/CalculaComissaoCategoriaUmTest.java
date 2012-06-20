@@ -4,17 +4,9 @@
  */
 package controller;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.*;
 import model.CalculaComissaoCategoriaUm;
 import model.entity.Comissao;
-import model.CalculaComissaoCategoriaUm;
-import model.CalculaComissaoCategoriaUm;
-import model.entity.Comissao;
+import org.junit.*;
 /**
  *
  * @author Taís

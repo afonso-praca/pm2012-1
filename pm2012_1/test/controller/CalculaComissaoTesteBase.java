@@ -15,7 +15,7 @@ import java.util.List;
 import model.entity.Preco;
 import model.entity.Venda;
 import model.entity.Vendedor;
-import org.junit.Before;
+import org.junit.*;
 
 
 public class CalculaComissaoTesteBase {
