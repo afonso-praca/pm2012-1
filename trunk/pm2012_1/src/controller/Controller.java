@@ -12,10 +12,6 @@ import model.entity.Venda;
 import model.entity.Vendedor;
 
 public class Controller {
-    
-        public static VendaToEntity vendaReader;
-        public static VendedorToEntity vendedorReader;
-        public static PrecoToEntity precoReader;
         
 	public static EntityToTextFile EscritorDeArquivo;
 	public static CalculaComissaoService CalculadorDeComissaoService;
@@ -26,10 +22,6 @@ public class Controller {
 	public static List<Comissao> Comissoes;
 
 	public Controller(){
-		vendaReader = new VendaToEntity();
-                vendedorReader = new VendedorToEntity();
-                precoReader = new PrecoToEntity();
-		
                 EscritorDeArquivo = new EntityToTextFile();
 		CalculadorDeComissaoService = new CalculaComissaoService();
 	}
@@ -38,9 +30,9 @@ public class Controller {
             String precosPath, String vendedoresPath, String saidaPath) throws Exception {
             
 		try {
-                    Vendas = vendaReader.ConverteArquivoDoModelo(vendasPath);
-                    Precos = precoReader.ConverteArquivoDoModelo(precosPath);
-                    Vendedores = vendedorReader.ConverteArquivoDoModelo(vendedoresPath);
+                    Vendas = VendaToEntity.getInstance().ConverteArquivoDoModelo(vendasPath);
+                    Precos = PrecoToEntity.getInstance().ConverteArquivoDoModelo(precosPath);
+                    Vendedores = VendedorToEntity.getInstance().ConverteArquivoDoModelo(vendedoresPath);
 		
                     if (Vendas!= null && Precos!= null && Vendedores!= null){
                         Comissoes=CalculadorDeComissaoService.CalculaComissoes(mes, Vendas, Precos, Vendedores);
