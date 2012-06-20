@@ -16,8 +16,23 @@ import model.entity.Venda;
  */
 public class VendaToEntity extends CSVToEntity<Venda> {
     
+    private static VendaToEntity instancia;
+    
     public VendaToEntity(){
         sdf = new SimpleDateFormat("dd/MM/yyyy");
+    }
+    
+    /**
+    * Singleton
+    * 
+    * @return uma instância da classe VendaToEntity 
+    * 
+    */
+    public static VendaToEntity getInstance() {
+        if (instancia == null) {
+            instancia = new VendaToEntity();
+        }
+        return instancia;
     }
     
     public List<Venda> ConverteArquivoDoModelo(String caminho){

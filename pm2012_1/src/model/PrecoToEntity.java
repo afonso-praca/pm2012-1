@@ -16,8 +16,23 @@ import model.entity.Preco;
  */
 public class PrecoToEntity extends CSVToEntity<Preco> {
     
+    private static PrecoToEntity instancia;
+    
     public PrecoToEntity(){
         sdf = new SimpleDateFormat("dd/MM/yyyy");
+    }
+    
+    /**
+    * Singleton
+    * 
+    * @return uma instância da classe PrecoToEntity 
+    * 
+    */
+    public static PrecoToEntity getInstance() {
+        if (instancia == null) {
+            instancia = new PrecoToEntity();
+        }
+        return instancia;
     }
     
     public List<Preco> ConverteArquivoDoModelo(String caminho){
