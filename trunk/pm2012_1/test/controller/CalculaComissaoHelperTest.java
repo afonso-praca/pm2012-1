@@ -4,20 +4,11 @@
  */
 package controller;
 
-import model.entity.Preco;
-import model.entity.Venda;
-import model.entity.Vendedor;
-import java.util.HashMap;
 import java.util.List;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.*;
-import model.CalculaComissaoHelper;
 import model.CalculaComissaoHelper;
 import model.entity.Comissao;
+import model.entity.Venda;
+import org.junit.*;
 
 public class CalculaComissaoHelperTest extends CalculaComissaoTesteBase{
 
