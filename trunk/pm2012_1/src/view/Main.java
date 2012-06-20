@@ -525,7 +525,7 @@ public class Main extends javax.swing.JFrame {
 
         if ((rb_TXT.isSelected()) || (rb_XML.isSelected())) {
 
-            Component[] comps = panel_info_fields.getComponents();
+            Component [] comps = panel_info_fields.getComponents();
             for (int i = 0; i < comps.length; i++) {
                 System.out.println(comps[i]);
                 if (comps[i] instanceof javax.swing.JTextField
