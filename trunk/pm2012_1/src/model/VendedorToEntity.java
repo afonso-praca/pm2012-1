@@ -14,8 +14,19 @@ import model.entity.Vendedor;
  */
 public class VendedorToEntity extends CSVToEntity<Vendedor> {
     
-    public VendedorToEntity(){
-        
+    private static VendedorToEntity instancia;
+    
+    /**
+    * Singleton
+    * 
+    * @return uma instância da classe VendedorToEntity 
+    * 
+    */
+    public static VendedorToEntity getInstance() {
+        if (instancia == null) {
+            instancia = new VendedorToEntity();
+        }
+        return instancia;
     }
     
     public List<Vendedor> ConverteArquivoDoModelo(String caminho){
