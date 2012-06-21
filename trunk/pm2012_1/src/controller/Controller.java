@@ -27,7 +27,9 @@ public class Controller {
 	}
 	
 	public static void calculaComissoes(String mes, String vendasPath,
-            String precosPath, String vendedoresPath, String saidaPath) throws Exception {
+            String precosPath, String vendedoresPath, String saidaPath, String tipo_arquivo_origem) throws Exception {
+            
+            System.out.println(tipo_arquivo_origem);
             
 		try {
                     Vendas = VendaToEntity.getInstance().ConverteArquivoDoModelo(vendasPath);

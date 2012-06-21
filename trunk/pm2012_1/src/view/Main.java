@@ -14,9 +14,7 @@ import controller.Controller;
 import java.awt.Component;
 import java.io.File;
 import javax.swing.JFileChooser;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import org.w3c.dom.events.EventException;
 
 /**
  *
@@ -24,6 +22,8 @@ import org.w3c.dom.events.EventException;
  */
 public class Main extends javax.swing.JFrame {
 
+    String tipo_arquivo_origem = null;
+    
     //view
     static Controller controller;
 
@@ -377,7 +377,7 @@ public class Main extends javax.swing.JFrame {
                     System.out.println(saida_path);
                     System.out.println(mes);
 
-                    controller.calculaComissoes(mes, vendas_path, precos_path, vendedores_path, saida_path);
+                    controller.calculaComissoes(mes, vendas_path, precos_path, vendedores_path, saida_path, tipo_arquivo_origem);
                     JOptionPane.showMessageDialog(this, "Arquivo salvo com sucesso !");
 
                 } catch (Exception e) {
@@ -567,13 +567,13 @@ public class Main extends javax.swing.JFrame {
 
     private void rb_TXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_TXTActionPerformed
 
-        selectTypeFile();
+        tipo_arquivo_origem = selectTypeFile();
         
     }//GEN-LAST:event_rb_TXTActionPerformed
 
     private void rb_XMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_XMLActionPerformed
 
-        selectTypeFile();
+        tipo_arquivo_origem = selectTypeFile();
         
     }//GEN-LAST:event_rb_XMLActionPerformed
 
