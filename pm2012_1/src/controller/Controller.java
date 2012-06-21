@@ -34,8 +34,8 @@ public class Controller {
                     Precos = PrecoToEntity.getInstance().ConverteArquivoDoModelo(precosPath);
                     Vendedores = VendedorToEntity.getInstance().ConverteArquivoDoModelo(vendedoresPath);
 		
-                    if (Vendas!= null && Precos!= null && Vendedores!= null){
-                        Comissoes=CalculadorDeComissaoService.CalculaComissoes(mes, Vendas, Precos, Vendedores);
+                    if (Vendas != null && Precos != null && Vendedores != null){
+                        Comissoes = CalculadorDeComissaoService.CalculaComissoes(mes, Vendas, Precos, Vendedores);
                     } else {
                         throw new Exception("Um erro ocoreu na leitua dos arquivos.");
                     }
