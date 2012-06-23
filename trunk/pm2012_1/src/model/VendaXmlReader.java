@@ -16,7 +16,7 @@ import model.entity.Venda;
  *
  * @author labccet
  */
-public class TextXmlReader {
+public class VendaXmlReader {
     public List<Venda> LeArquivoParaUmaLista(String caminhoDeOrigemXML){
 		
         try {
@@ -37,11 +37,11 @@ public class TextXmlReader {
                     
                     List<Venda> arquivoEmListaXML = new ArrayList<Venda>();
                     arquivoEmListaXML.addAll(listaXML);			
-                    
-                    System.out.println("Lista Vendas" + arquivoEmListaXML);
+                  
                     return listaXML;
 
         } catch (Exception e) {
+            System.out.println("Erro: " + e.getMessage());
             return null;
         }
 		 
