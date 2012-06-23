@@ -2,7 +2,7 @@
  * Classe que lê um arquivo CSV e retorna uma lista de Strings[]
  */
 
-package model;
+package model.txt;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

@@ -4,6 +4,9 @@
  */
 package controller;
 
+import model.txt.VendaToEntity;
+import model.txt.PrecoToEntity;
+import model.txt.VendedorToEntity;
 import java.util.EventListener;
 import java.util.List;
 import model.*;
