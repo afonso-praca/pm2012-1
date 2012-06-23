@@ -4,6 +4,7 @@
  */
 package controller;
 
+import java.util.EventListener;
 import java.util.List;
 import model.*;
 import model.entity.Comissao;
@@ -20,13 +21,15 @@ public class Controller {
 	public static List<Preco> Precos;
 	public static List<Vendedor> Vendedores;
 	public static List<Comissao> Comissoes;
+        
+        public EventListener listener;
 
 	public Controller(){
                 EscritorDeArquivo = new EntityToTextFile();
 		CalculadorDeComissaoService = new CalculaComissaoService();
 	}
 	
-	public static void calculaComissoes(String mes, String vendasPath,
+	public void calculaComissoes(String mes, String vendasPath,
             String precosPath, String vendedoresPath, String saidaPath, String tipo_arquivo_origem) throws Exception {
             
             System.out.println(tipo_arquivo_origem);
