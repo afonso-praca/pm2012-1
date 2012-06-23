@@ -2,37 +2,36 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package model.xml;
 
 import java.beans.XMLDecoder;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
-import model.entity.Preco;
+import model.entity.Vendedor;
 
 /**
  *
  * @author Marina Vinhaes
  */
-public class PrecoXmlReader {
-     public List<Preco> LeArquivoParaUmaLista(String caminhoDeOrigemXML){
+public class VendedorXmlReader {
+    public List<Vendedor> LeArquivoParaUmaLista(String caminhoDeOrigemXML){
 		
         try {
 
             XMLDecoder vendasReaderxml = new XMLDecoder(new FileInputStream(caminhoDeOrigemXML));
 
 
-            List<Preco> listaXML = (ArrayList<Preco>) vendasReaderxml.readObject();
+            List<Vendedor> listaXML = (ArrayList<Vendedor>) vendasReaderxml.readObject();
 
-                    for (Preco p : listaXML) {
-                    System.out.println(p.getData());
-                    System.out.println(p.getPrecoPA());
-                    System.out.println(p.getPrecoPB());
-                    System.out.println(p.getPrecoPC());
+                    for (Vendedor v : listaXML) {
+                    System.out.println(v.getCodigo());
+                    System.out.println(v.getNome());
+                    System.out.println(v.getCategoria());
                     
                     }
                     
-                    List<Preco> arquivoEmListaXML = new ArrayList<Preco>();
+                    List<Vendedor> arquivoEmListaXML = new ArrayList<Vendedor>();
                     arquivoEmListaXML.addAll(listaXML);			
                    
                     return listaXML;
@@ -43,5 +42,4 @@ public class PrecoXmlReader {
         }
 		 
     }
-    
 }
