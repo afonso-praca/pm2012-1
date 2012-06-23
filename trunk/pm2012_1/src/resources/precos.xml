@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<logprecos>
+    <preco>
+        <data> 10/02/2011 </data>
+        <prodA> 40,00 </prodA>
+        <prodB> 50,00 </prodB>
+        <prodC> 70,00 </prodC>
+    </preco>
+    <preco>
+        <data> 05/03/2011 </data>
+        <prodA> 42,50 </prodA>
+        <prodB> 51,70 </prodB>
+        <prodC> 70,00 </prodC>
+    </preco>
+</logprecos>

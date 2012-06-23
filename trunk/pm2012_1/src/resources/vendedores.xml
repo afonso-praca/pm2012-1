@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rh>
+    <vendedor>
+        <codigo> 0020 </codigo>
+        <nome> MANOEL DA SILVA </nome>
+        <categoria> 1 </categoria>
+    </vendedor>
+    <vendedor>
+        <codigo> 0021 </codigo>
+        <nome> JOANA ANGELICA </nome>
+        <categoria> 2 </categoria>
+    </vendedor>
+</rh>

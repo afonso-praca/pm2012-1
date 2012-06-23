@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<logvendas>
+    <venda>
+        <data> 10/03/2011 </data>
+        <vendedor> 0020 </vendedor>
+        <qtdeA> 10 </qtdeA>
+        <qtdeB> 30 </qtdeB>
+        <qtdeC> 50 </qtdeC>
+    </venda>
+    <venda>
+        <data> 10/03/2011 </data>
+        <vendedor> 0019 </vendedor>
+        <qtdeA> 15 </qtdeA>
+        <qtdeB> 35 </qtdeB>
+        <qtdeC> 55 </qtdeC>
+    </venda>
+</logvendas>
