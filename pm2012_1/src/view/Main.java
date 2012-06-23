@@ -24,10 +24,9 @@ public class Main extends javax.swing.JFrame {
 
     String tipo_arquivo_origem = null;
     
-    //view
+    //controller
     static Controller controller;
-
-    //static Controller controller;
+    
     /**
      * Creates new form tela_principal
      */
@@ -354,32 +353,24 @@ public class Main extends javax.swing.JFrame {
     private void button_calcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_calcActionPerformed
 
         controller = new Controller();
-
         String mes = text_field_mes.getText();
-        String msg = validaMes(mes);
+        String retorno_valida_mes = ValidaMain.validaMes(mes);
 
-        if ("valido".equals(msg)) {
+        if ("valido".equals(retorno_valida_mes)) {
             String vendas_path = text_field_vendas.getText();
             String precos_path = text_field_precos.getText();
             String vendedores_path = text_field_vendedores.getText();
             String saida_path = text_field_saida.getText();
 
-
-            String msgArquivos = validaArquivos(vendas_path, precos_path, vendedores_path, saida_path);
+            String msgArquivos = ValidaMain.validaArquivos(vendas_path, precos_path, vendedores_path, saida_path);
 
             if ("".equals(msgArquivos)) {
+                
                 //chama o controler.java
                 //aqui vamos passar as urls que devem ser carregadas
                 try {
-                    System.out.println(vendas_path);
-                    System.out.println(vendedores_path);
-                    System.out.println(precos_path);
-                    System.out.println(saida_path);
-                    System.out.println(mes);
-
                     controller.calculaComissoes(mes, vendas_path, precos_path, vendedores_path, saida_path, tipo_arquivo_origem);
                     JOptionPane.showMessageDialog(this, "Arquivo salvo com sucesso !");
-
                 } catch (Exception e) {
                     System.out.println("erro " + e.getMessage());
                     JOptionPane.showMessageDialog(this, "Erro, por favor verifique as entradas", "ERRO", JOptionPane.ERROR_MESSAGE);
@@ -388,114 +379,29 @@ public class Main extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, msgArquivos);
             }
         } else {
-            JOptionPane.showMessageDialog(this, msg);
+            JOptionPane.showMessageDialog(this, retorno_valida_mes);
         }
-        //JOptionPane.showMessageDialog(saida_path,"Arquivo criado com sucesso!");
     }//GEN-LAST:event_button_calcActionPerformed
 
     public String geraCaminho() {
         JFileChooser chooser = new JFileChooser();
         int returnVal = chooser.showOpenDialog(null);
+        
         if (returnVal == JFileChooser.APPROVE_OPTION) {
-
             File arq = chooser.getSelectedFile().getAbsoluteFile();
-
             String caminho = arq.getPath();
             return caminho;
-
         } else {
             return "Selecione um arquivo";
         }
-
     }
 
     public String geraDiretorio() {
-
-//    public static final int YES_OPTION = 0;
-//    public static final int NO_OPTION = 1;
-//    public static final int CANCEL_OPTION = 2;
-//    public static final int OK_OPTION = 0;
-//    public static final int CLOSED_OPTION = -1;
-
-
         JFileChooser chooser = new JFileChooser();
         int returnVal = chooser.showSaveDialog(null);
-
         File arq = chooser.getSelectedFile().getAbsoluteFile();
-
         String caminho = arq.getPath();
         return caminho;
-
-    }
-
-    private String validaMes(String mes) {
-        String msg = "valido";
-        //usando a comparação com aspas "" para evitar null pointer exception se a variável mês vier nula
-        if (!"".equals(mes)) {
-            try {
-                int mesNumero = Integer.parseInt(mes);
-            } catch (NumberFormatException ex) {
-                msg = "Mês informado é inválido!";
-            }
-        } else {
-            msg = "Preenchimento do mês é obrigatório!";
-        }
-
-        return msg;
-    }
-
-    private String converteMes(String mes) {
-        int mesNumero = Integer.parseInt(mes);
-        switch (mesNumero) {
-            case 1:
-                return "Janeiro";
-            case 2:
-                return "Fevereiro";
-            case 3:
-                return "Março";
-            case 4:
-                return "Abril";
-            case 5:
-                return "Maio";
-            case 6:
-                return "Junho";
-            case 7:
-                return "Julho";
-            case 8:
-                return "Agosto";
-            case 9:
-                return "Setembro";
-            case 10:
-                return "Outubro";
-            case 11:
-                return "Novembro";
-            case 12:
-                return "Dezembro";
-            default:
-                return "Mês Inválido";
-        }
-    }
-
-    private String validaArquivos(String vendas_path, String precos_path, String vendedores_path, String saida_path) {
-        String msg = "";
-
-        if (vendas_path == null || "".equals(vendas_path)) {
-            msg = "Arquivo de vendas é obrigatório\n";
-        }
-
-        if (precos_path == null || "".equals(precos_path)) {
-            msg += "Arquivo de preços é obrigatório\n";
-        }
-
-        if (vendedores_path == null || "".equals(vendedores_path)) {
-            msg += "Arquivo de vendedores é obrigatório\n";
-        }
-
-        if (saida_path == null || "".equals(saida_path)) {
-            msg += "Arquivo de saída é obrigatório";
-        }
-
-        return msg;
     }
 
     private void btFileChooserVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFileChooserVendasActionPerformed
@@ -539,42 +445,29 @@ public class Main extends javax.swing.JFrame {
     }
 
     public String selectTypeFile() {
-
         try {
-
-
             if (rb_TXT.isSelected()) {
-
                 enabledPanelFiles();
                 return "TXT";
-
             }
-
             if (rb_XML.isSelected()) {
-
                 enabledPanelFiles();
                 return "XML";
-
             }
         } catch (Exception e) {
-            
             return e.getMessage();
-            
         }
         return("Deu Problema");
-        
     }
 
     private void rb_TXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_TXTActionPerformed
 
         tipo_arquivo_origem = selectTypeFile();
-        
     }//GEN-LAST:event_rb_TXTActionPerformed
 
     private void rb_XMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_XMLActionPerformed
 
         tipo_arquivo_origem = selectTypeFile();
-        
     }//GEN-LAST:event_rb_XMLActionPerformed
 
     /**
@@ -582,7 +475,6 @@ public class Main extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
-
             public void run() {
                 new Main().setVisible(true);
             }
