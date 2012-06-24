@@ -7,7 +7,7 @@
      <char>1</char>
     </void>
     <void property="codigo">
-     <string>03</string>
+     <string>01</string>
     </void>
     <void property="nome">
      <string>afonso</string>
@@ -20,23 +20,23 @@
      <char>2</char>
     </void>
     <void property="codigo">
-     <string>01</string>
+     <string>02</string>
     </void>
     <void property="nome">
-     <string>afonso</string>
+     <string>pc</string>
     </void>
    </object>
   </void>
   <void index="2">
    <object class="model.entity.Vendedor">
     <void property="categoria">
-     <char>8</char>
+     <char>1</char>
     </void>
     <void property="codigo">
-     <string>02</string>
+     <string>03</string>
     </void>
     <void property="nome">
-     <string>afonso</string>
+     <string>marina</string>
     </void>
    </object>
   </void>
