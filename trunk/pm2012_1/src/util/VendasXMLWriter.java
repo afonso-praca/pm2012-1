@@ -18,11 +18,11 @@ public class VendasXMLWriter {
     
     private static SimpleDateFormat sdf;
     
-    public static void EscrevePreco() throws ParseException{
+    public static void EscreveXml() throws ParseException{
         
         sdf = new SimpleDateFormat("dd/MM/yyyy");
         
-        Venda[] vendas =  null;
+        Venda[] vendas =  new Venda[3];
         vendas[0] = new Venda(sdf.parse("10/03/2012"), "01", 1, 2, 3);
         vendas[1] = new Venda(sdf.parse("11/03/2012"), "01", 2, 2, 3);
         vendas[2] = new Venda(sdf.parse("12/03/2012"), "02", 1, 2, 3);
@@ -32,7 +32,7 @@ public class VendasXMLWriter {
         try {
             try {
                 writer = new XMLEncoder(
-                        new FileOutputStream("vendas.xml"));
+                        new FileOutputStream("src/resources/vendas.xml"));
                 writer.writeObject(vendas);
             } finally {
                 if (writer != null)

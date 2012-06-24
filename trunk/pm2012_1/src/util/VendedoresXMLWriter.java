@@ -14,20 +14,19 @@ import model.entity.Vendedor;
  */
 public class VendedoresXMLWriter {
     
-    public static void EscrevePreco(){
+    public static void EscreveXml(){
         
-        Vendedor[] vendedores = null;
+        Vendedor[] vendedores = new Vendedor[3];
         vendedores[0] = new Vendedor("01", "afonso", '1');
         vendedores[1] = new Vendedor("02", "pc", '2');
-        vendedores[2] = new Vendedor("03", "tais", '1');
-        vendedores[3] = new Vendedor("04", "marina", '1');
+        vendedores[2] = new Vendedor("03", "marina", '1');
         
         XMLEncoder writer = null;
         
         try {
             try {
                 writer = new XMLEncoder(
-                        new FileOutputStream("objs.xml"));
+                        new FileOutputStream("src/resources/vendedores.xml"));
                 writer.writeObject(vendedores);
             } finally {
                 if (writer != null)
