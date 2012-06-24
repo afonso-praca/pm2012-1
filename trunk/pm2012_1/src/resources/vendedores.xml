@@ -30,7 +30,7 @@
   <void index="2">
    <object class="model.entity.Vendedor">
     <void property="categoria">
-     <char>1</char>
+     <char>8</char>
     </void>
     <void property="codigo">
      <string>02</string>

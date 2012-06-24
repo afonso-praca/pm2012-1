@@ -435,7 +435,7 @@ public class Main extends javax.swing.JFrame {
     public void enabledPanelFiles() {
         Component[] comps = panel_info_fields.getComponents();
         for (int i = 0; i < comps.length; i++) {
-            System.out.println(comps[i]);
+            //System.out.println(comps[i]);
             if (comps[i] instanceof javax.swing.JTextField
                     || comps[i] instanceof javax.swing.JLabel
                     || comps[i] instanceof javax.swing.JButton) {
