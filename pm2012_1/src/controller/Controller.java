@@ -16,7 +16,6 @@ import model.txt.PrecoToEntity;
 import model.txt.VendaToEntity;
 import model.txt.VendedorToEntity;
 import model.xml.VendedorXmlReader;
-import util.VendasXMLWriter;
 
 public class Controller {
         
