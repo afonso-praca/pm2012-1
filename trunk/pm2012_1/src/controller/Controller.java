@@ -15,6 +15,8 @@ import model.entity.Vendedor;
 import model.txt.PrecoToEntity;
 import model.txt.VendaToEntity;
 import model.txt.VendedorToEntity;
+import model.xml.PrecoXmlReader;
+import model.xml.VendaXmlReader;
 import model.xml.VendedorXmlReader;
 
 public class Controller {
@@ -69,10 +71,20 @@ public class Controller {
             if (tipo_arquivo_origem.equalsIgnoreCase("xml"))
             {
                 System.out.println("xml!");
-                List<Vendedor> lista = VendedorXmlReader.LeArquivoParaUmaLista(vendedoresPath);
+                Vendedores = VendedorXmlReader.LeArquivoParaUmaLista(vendedoresPath);
+                Vendas = VendaXmlReader.LeArquivoParaUmaLista(vendasPath);
+                Precos = PrecoXmlReader.LeArquivoParaUmaLista(precosPath);
                 
-                for (Vendedor v : lista) {
+                for (Vendedor v : Vendedores) {
                     System.out.println(v.toString());
+                }
+                
+                for (Venda r : Vendas) {
+                    System.out.println(r.toString());
+                }
+                
+                for (Preco p : Precos) {
+                    System.out.println(p.toString());
                 }
             }
 	}
