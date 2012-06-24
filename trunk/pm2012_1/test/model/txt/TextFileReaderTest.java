@@ -18,7 +18,7 @@ public class TextFileReaderTest {
     
     
     @Test
-    /** Testa a reação do sistema  ao não informar um caminho de arquivo vazio. 
+    /** Testa a reação do sistema  ao informar um caminho de arquivo vazio. 
      O resultado Esperado é criar uma lista vazia*/
     public void testLerCaminhoVazio() { 
         System.out.println("Objetivo do teste: Caminho de Arquivo Vazio,cria uma Lista Vazia.");
