@@ -16,7 +16,20 @@ public class Comissao extends BaseEntity {
 	private double TotalVendidoProdutoB;
 	private double TotalVendidoProdutoC;
 	private double Comissao;
-	
+
+        public Comissao() {
+            
+        }
+
+        public Comissao(String Mes, model.entity.Vendedor Vendedor, double TotalVendidoProdutoA, double TotalVendidoProdutoB, double TotalVendidoProdutoC, double Comissao) {
+            this.Mes = Mes;
+            this.Vendedor = Vendedor;
+            this.TotalVendidoProdutoA = TotalVendidoProdutoA;
+            this.TotalVendidoProdutoB = TotalVendidoProdutoB;
+            this.TotalVendidoProdutoC = TotalVendidoProdutoC;
+            this.Comissao = Comissao;
+        }
+    
 	public String getMes() {
 		return Mes;
 	}

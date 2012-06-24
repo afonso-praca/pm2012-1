@@ -17,8 +17,19 @@ public class Venda extends BaseEntity{
 	private int QuantidadePA;
 	private int QuantidadePB;
 	private int QuantidadePC;
-	
-	
+
+        public Venda() {
+            
+        }
+
+        public Venda(Date Data, String CodigoVendedor, int QuantidadePA, int QuantidadePB, int QuantidadePC) {
+            this.Data = Data;
+            this.CodigoVendedor = CodigoVendedor;
+            this.QuantidadePA = QuantidadePA;
+            this.QuantidadePB = QuantidadePB;
+            this.QuantidadePC = QuantidadePC;
+        }
+        
 	public Date getData() {
 		return Data;
 	}

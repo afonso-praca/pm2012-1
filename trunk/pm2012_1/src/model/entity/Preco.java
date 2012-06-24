@@ -16,6 +16,17 @@ public class Preco extends BaseEntity {
 	private double PrecoPA;
 	private double PrecoPB;
 	private double PrecoPC;
+
+        public Preco() {
+            
+        }
+        
+         public Preco(Date Data, double PrecoPA, double PrecoPB, double PrecoPC) {
+            this.Data = Data;
+            this.PrecoPA = PrecoPA;
+            this.PrecoPB = PrecoPB;
+            this.PrecoPC = PrecoPC;
+        }
 	
 	public Date getData() {
 		return Data;
