@@ -5,13 +5,10 @@
 package model.xml;
 
 import java.beans.XMLDecoder;
-import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 import model.entity.Venda;
-import model.entity.Vendedor;
 
 /**
  *

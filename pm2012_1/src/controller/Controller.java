@@ -16,6 +16,7 @@ import model.txt.PrecoToEntity;
 import model.txt.VendaToEntity;
 import model.txt.VendedorToEntity;
 import model.xml.VendedorXmlReader;
+import util.VendasXMLWriter;
 
 public class Controller {
         
@@ -68,6 +69,7 @@ public class Controller {
             else {
                 System.out.println("xml!");
                 VendedorXmlReader.LeArquivoParaUmaLista(vendedoresPath);
+                //VendasXMLWriter.EscrevePreco();
             }
 	}
 }
