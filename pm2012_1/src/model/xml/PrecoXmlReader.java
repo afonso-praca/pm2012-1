@@ -15,7 +15,7 @@ import model.entity.Preco;
  * @author Marina Vinhaes
  */
 public class PrecoXmlReader {
-     public List<Preco> LeArquivoParaUmaLista(String caminhoDeOrigemXML){
+     public static List<Preco> LeArquivoParaUmaLista(String caminhoDeOrigemXML){
 		
         try {
 
