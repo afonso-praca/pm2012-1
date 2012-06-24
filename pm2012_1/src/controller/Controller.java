@@ -4,16 +4,18 @@
  */
 package controller;
 
-import model.txt.VendaToEntity;
-import model.txt.PrecoToEntity;
-import model.txt.VendedorToEntity;
 import java.util.EventListener;
 import java.util.List;
-import model.*;
+import model.CalculaComissaoService;
+import model.EntityToTextFile;
 import model.entity.Comissao;
 import model.entity.Preco;
 import model.entity.Venda;
 import model.entity.Vendedor;
+import model.txt.PrecoToEntity;
+import model.txt.VendaToEntity;
+import model.txt.VendedorToEntity;
+import model.xml.PrecoXmlReader;
 
 public class Controller {
         
@@ -37,6 +39,9 @@ public class Controller {
             
             System.out.println(tipo_arquivo_origem);
             
+            if (tipo_arquivo_origem.equalsIgnoreCase("txt"))
+            {
+            
 		try {
                     Vendas = VendaToEntity.getInstance().ConverteArquivoDoModelo(vendasPath);
                     Precos = PrecoToEntity.getInstance().ConverteArquivoDoModelo(precosPath);
@@ -59,6 +64,13 @@ public class Controller {
                     System.out.println(e.getMessage());
                     throw e;
 		}
+            }
+            else {
+                System.out.println("xml go!");
+                
+                Precos = PrecoXmlReader.LeArquivoParaUmaLista(precosPath);
+                System.out.println(PrecoXmlReader.class);
+            }
 	}
 }
 
