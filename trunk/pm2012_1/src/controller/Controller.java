@@ -65,10 +65,15 @@ public class Controller {
                     throw e;
 		}
             }
-            else {
+            
+            if (tipo_arquivo_origem.equalsIgnoreCase("xml"))
+            {
                 System.out.println("xml!");
-                VendedorXmlReader.LeArquivoParaUmaLista(vendedoresPath);
-                //VendasXMLWriter.EscrevePreco();
+                List<Vendedor> lista = VendedorXmlReader.LeArquivoParaUmaLista(vendedoresPath);
+                
+                for (Vendedor v : lista) {
+                    System.out.println(v.toString());
+                }
             }
 	}
 }
