@@ -1,13 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rh>
-    <vendedor>
-        <codigo> 0020 </codigo>
-        <nome> MANOEL DA SILVA </nome>
-        <categoria> 1 </categoria>
-    </vendedor>
-    <vendedor>
-        <codigo> 0021 </codigo>
-        <nome> JOANA ANGELICA </nome>
-        <categoria> 2 </categoria>
-    </vendedor>
-</rh>
+<java version="1.7.0" class="java.beans.XMLDecoder">
+ <array class="model.entity.Vendedor" length="3">
+  <void index="0">
+   <object class="model.entity.Vendedor">
+    <void property="categoria">
+     <char>1</char>
+    </void>
+    <void property="codigo">
+     <string>03</string>
+    </void>
+    <void property="nome">
+     <string>afonso</string>
+    </void>
+   </object>
+  </void>
+  <void index="1">
+   <object class="model.entity.Vendedor">
+    <void property="categoria">
+     <char>2</char>
+    </void>
+    <void property="codigo">
+     <string>01</string>
+    </void>
+    <void property="nome">
+     <string>afonso</string>
+    </void>
+   </object>
+  </void>
+  <void index="2">
+   <object class="model.entity.Vendedor">
+    <void property="categoria">
+     <char>1</char>
+    </void>
+    <void property="codigo">
+     <string>02</string>
+    </void>
+    <void property="nome">
+     <string>afonso</string>
+    </void>
+   </object>
+  </void>
+ </array>
+</java>
