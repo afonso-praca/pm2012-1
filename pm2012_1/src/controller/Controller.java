@@ -15,7 +15,7 @@ import model.entity.Vendedor;
 import model.txt.PrecoToEntity;
 import model.txt.VendaToEntity;
 import model.txt.VendedorToEntity;
-import model.xml.PrecoXmlReader;
+import model.xml.VendedorXmlReader;
 
 public class Controller {
         
@@ -66,10 +66,8 @@ public class Controller {
 		}
             }
             else {
-                System.out.println("xml go!");
-                
-                Precos = PrecoXmlReader.LeArquivoParaUmaLista(precosPath);
-                System.out.println(PrecoXmlReader.class);
+                System.out.println("xml!");
+                VendedorXmlReader.LeArquivoParaUmaLista(vendedoresPath);
             }
 	}
 }

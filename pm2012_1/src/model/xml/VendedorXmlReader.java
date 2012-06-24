@@ -14,32 +14,48 @@ import model.entity.Vendedor;
  *
  * @author Marina Vinhaes
  */
+
 public class VendedorXmlReader {
-    public List<Vendedor> LeArquivoParaUmaLista(String caminhoDeOrigemXML){
+    
+    public static List<Vendedor> LeArquivoParaUmaLista(String caminhoDeOrigemXML){
 		
+        List<Vendedor> listaXML = null;
+        XMLDecoder reader = null;
+       
+        System.out.println("VendedorXmlReader");
+        
         try {
-
-            XMLDecoder vendasReaderxml = new XMLDecoder(new FileInputStream(caminhoDeOrigemXML));
-
-
-            List<Vendedor> listaXML = (ArrayList<Vendedor>) vendasReaderxml.readObject();
-
-                    for (Vendedor v : listaXML) {
+            try {
+                reader = new XMLDecoder(
+                        new FileInputStream(caminhoDeOrigemXML));
+                
+                Vendedor[] vendedores;
+                listaXML = new ArrayList<Vendedor>();
+                
+                vendedores = (Vendedor[])reader.readObject();
+                
+                for (Vendedor v : vendedores) {
                     System.out.println(v.getCodigo());
                     System.out.println(v.getNome());
                     System.out.println(v.getCategoria());
                     
-                    }
+                    Vendedor vendedor = new Vendedor();
+                    vendedor.setCategoria(v.getCategoria());
+                    vendedor.setCodigo(v.getCodigo());
+                    vendedor.setNome(v.getNome());
                     
-                    List<Vendedor> arquivoEmListaXML = new ArrayList<Vendedor>();
-                    arquivoEmListaXML.addAll(listaXML);			
-                   
-                    return listaXML;
-
+                    listaXML.add(vendedor);        
+                }
+                
+                return listaXML;
+                    
+         } finally {
+               if (reader != null)
+                   reader.close();
+            }
         } catch (Exception e) {
             System.out.println("Erro: " + e.getMessage());
             return null;
-        }
-		 
+        } 
     }
 }
