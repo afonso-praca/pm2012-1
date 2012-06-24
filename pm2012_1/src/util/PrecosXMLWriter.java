@@ -6,7 +6,10 @@ package util;
 
 import java.beans.XMLEncoder;
 import java.io.FileOutputStream;
-import model.entity.Vendedor;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import model.entity.Preco;
 
 /**
  *
@@ -14,20 +17,24 @@ import model.entity.Vendedor;
  */
 public class PrecosXMLWriter {
     
-    public static void EscrevePreco(){
+    private static SimpleDateFormat sdf;
+    
+    public static void EscreveXml() throws ParseException{
         
-        Vendedor[] vendedores = new Vendedor[3];
-        vendedores[0] = new Vendedor("03", "afonso", '1');
-        vendedores[1] = new Vendedor("01", "afonso", '2');
-        vendedores[2] = new Vendedor("02", "afonso", '1');
+        sdf = new SimpleDateFormat("dd/MM/yyyy");
+        
+        Preco[] precos = new Preco[3];
+        precos[0] = new Preco(sdf.parse("03/02/2012"), 10, 11, 12);
+        precos[1] = new Preco(sdf.parse("10/03/2012"), 10, 8.23, 2.2);
+        precos[2] = new Preco(sdf.parse("11/03/2012"), 10, 12, 14);
         
         XMLEncoder writer = null;
         
         try {
             try {
                 writer = new XMLEncoder(
-                        new FileOutputStream("objs.xml"));
-                writer.writeObject(vendedores);
+                        new FileOutputStream("src/resources/precos.xml"));
+                writer.writeObject(precos);
             } finally {
                 if (writer != null)
                     writer.close();
