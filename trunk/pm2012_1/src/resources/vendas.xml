@@ -1,17 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<logvendas>
-    <venda>
-        <data> 10/03/2011 </data>
-        <vendedor> 0020 </vendedor>
-        <qtdeA> 10 </qtdeA>
-        <qtdeB> 30 </qtdeB>
-        <qtdeC> 50 </qtdeC>
-    </venda>
-    <venda>
-        <data> 10/03/2011 </data>
-        <vendedor> 0019 </vendedor>
-        <qtdeA> 15 </qtdeA>
-        <qtdeB> 35 </qtdeB>
-        <qtdeC> 55 </qtdeC>
-    </venda>
-</logvendas>
+<java version="1.7.0" class="java.beans.XMLDecoder">
+ <array class="model.entity.Venda" length="3">
+  <void index="0">
+   <object class="model.entity.Venda">
+    <void property="codigoVendedor">
+     <string>01</string>
+    </void>
+    <void property="data">
+     <object class="java.util.Date">
+      <long>1331348400000</long>
+     </object>
+    </void>
+    <void property="quantidadePA">
+     <int>1</int>
+    </void>
+    <void property="quantidadePB">
+     <int>2</int>
+    </void>
+    <void property="quantidadePC">
+     <int>3</int>
+    </void>
+   </object>
+  </void>
+  <void index="1">
+   <object class="model.entity.Venda">
+    <void property="codigoVendedor">
+     <string>01</string>
+    </void>
+    <void property="data">
+     <object class="java.util.Date">
+      <long>1331434800000</long>
+     </object>
+    </void>
+    <void property="quantidadePA">
+     <int>2</int>
+    </void>
+    <void property="quantidadePB">
+     <int>2</int>
+    </void>
+    <void property="quantidadePC">
+     <int>3</int>
+    </void>
+   </object>
+  </void>
+  <void index="2">
+   <object class="model.entity.Venda">
+    <void property="codigoVendedor">
+     <string>02</string>
+    </void>
+    <void property="data">
+     <object class="java.util.Date">
+      <long>1331521200000</long>
+     </object>
+    </void>
+    <void property="quantidadePA">
+     <int>1</int>
+    </void>
+    <void property="quantidadePB">
+     <int>2</int>
+    </void>
+    <void property="quantidadePC">
+     <int>3</int>
+    </void>
+   </object>
+  </void>
+ </array>
+</java>

@@ -1,15 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<logprecos>
-    <preco>
-        <data> 10/02/2011 </data>
-        <prodA> 40,00 </prodA>
-        <prodB> 50,00 </prodB>
-        <prodC> 70,00 </prodC>
-    </preco>
-    <preco>
-        <data> 05/03/2011 </data>
-        <prodA> 42,50 </prodA>
-        <prodB> 51,70 </prodB>
-        <prodC> 70,00 </prodC>
-    </preco>
-</logprecos>
+<java version="1.7.0" class="java.beans.XMLDecoder">
+ <array class="model.entity.Preco" length="3">
+  <void index="0">
+   <object class="model.entity.Preco">
+    <void property="data">
+     <object class="java.util.Date">
+      <long>1328234400000</long>
+     </object>
+    </void>
+    <void property="precoPA">
+     <double>10.0</double>
+    </void>
+    <void property="precoPB">
+     <double>11.0</double>
+    </void>
+    <void property="precoPC">
+     <double>12.0</double>
+    </void>
+   </object>
+  </void>
+  <void index="1">
+   <object class="model.entity.Preco">
+    <void property="data">
+     <object class="java.util.Date">
+      <long>1331348400000</long>
+     </object>
+    </void>
+    <void property="precoPA">
+     <double>10.0</double>
+    </void>
+    <void property="precoPB">
+     <double>8.23</double>
+    </void>
+    <void property="precoPC">
+     <double>2.2</double>
+    </void>
+   </object>
+  </void>
+  <void index="2">
+   <object class="model.entity.Preco">
+    <void property="data">
+     <object class="java.util.Date">
+      <long>1331434800000</long>
+     </object>
+    </void>
+    <void property="precoPA">
+     <double>10.0</double>
+    </void>
+    <void property="precoPB">
+     <double>12.0</double>
+    </void>
+    <void property="precoPC">
+     <double>14.0</double>
+    </void>
+   </object>
+  </void>
+ </array>
+</java>
