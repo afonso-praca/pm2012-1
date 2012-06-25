@@ -1,6 +1,6 @@
 /*
  * Classe controladora da aplicação
- * TODO -> receber por parâmetro as referencias a leitores e escritores
+ * 
  */
 
 package controller;
@@ -52,7 +52,7 @@ public class Controller {
             // seleciona o tipo de leitura a ser feito (XML ou CSV)
             if (tipo_arquivo_origem.equalsIgnoreCase("txt"))
             {
-                //lê os CSVs
+                //lê os CSVs e povoa as listas
                 Vendas = VendaToEntity.getInstance().ConverteArquivoDoModelo(vendasPath);
                 Precos = PrecoToEntity.getInstance().ConverteArquivoDoModelo(precosPath);
                 Vendedores = VendedorToEntity.getInstance().ConverteArquivoDoModelo(vendedoresPath);
@@ -60,16 +60,11 @@ public class Controller {
             } 
             else 
             if (tipo_arquivo_origem.equalsIgnoreCase("xml")) 
-            {
-                //instancia leitores de XML
-                VendedorXmlReader vendedorXmlReader = new VendedorXmlReader();
-                VendaXmlReader vendaXmlReader = new VendaXmlReader();
-                PrecoXmlReader precoXmlReader = new PrecoXmlReader();
-                
+            {   
                 //lê os xmls e povoas as listas
-                Vendedores = vendedorXmlReader.LeArquivoParaUmaLista(vendedoresPath);
-                Vendas = vendaXmlReader.LeArquivoParaUmaLista(vendasPath);
-                Precos = precoXmlReader.LeArquivoParaUmaLista(precosPath);
+                Vendedores = VendedorXmlReader.getInstance().LeArquivoParaUmaLista(vendedoresPath);
+                Vendas = VendaXmlReader.getInstance().LeArquivoParaUmaLista(vendasPath);
+                Precos = PrecoXmlReader.getInstance().LeArquivoParaUmaLista(precosPath);
             }
 
             // Verifica os retornos e chama o calculo
