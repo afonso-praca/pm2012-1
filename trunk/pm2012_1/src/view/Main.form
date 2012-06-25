@@ -217,9 +217,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="label_mes" linkSize="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="combo_box_mes" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="combo_box_mes" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="label_mes" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -368,7 +368,7 @@
             <Component class="javax.swing.JComboBox" name="combo_box_mes">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="new javax.swing.DefaultComboBoxModel(new String[] { &quot;Janeiro&quot;, &quot;Fevereiro&quot;, &quot;Mar&#xe7;o&quot;, &quot;Abril&quot;, &quot;Maio&quot;, &quot;Junho&quot;, &quot;Julho&quot;, &quot;Agosto&quot;, &quot;Setembro&quot;, &quot;Outubro&quot;, &quot;Novembro&quot;, &quot;Dezembro&quot; })" type="code"/>
+                  <Connection code="new javax.swing.DefaultComboBoxModel(new String[] { &quot;01&quot;, &quot;02&quot;, &quot;03&quot;, &quot;04&quot;, &quot;05&quot;, &quot;06&quot;, &quot;07&quot;, &quot;08&quot;, &quot;09&quot;, &quot;10&quot;, &quot;11&quot;, &quot;12&quot; })" type="code"/>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
