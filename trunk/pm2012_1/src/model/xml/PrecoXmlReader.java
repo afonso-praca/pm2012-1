@@ -17,10 +17,7 @@ public class PrecoXmlReader extends XMLToEntity<Preco> {
         precos = (Preco[])obj_from_xml;
 
         for (Preco p : precos) {
-            System.out.println(p.getData());
-            System.out.println(p.getPrecoPA());
-            System.out.println(p.getPrecoPB());
-            System.out.println(p.getPrecoPC());
+            //System.out.println(p.toString());
 
             Preco p2 = new Preco();
             p2.setData(p.getData());

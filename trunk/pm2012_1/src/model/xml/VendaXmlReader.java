@@ -17,11 +17,7 @@ public class VendaXmlReader extends XMLToEntity<Venda> {
         vendas = (Venda[])obj_from_xml;
 
         for (Venda v : vendas) {
-            System.out.println(v.getData());
-            System.out.println(v.getCodigoVendedor());
-            System.out.println(v.getQuantidadePA());
-            System.out.println(v.getQuantidadePB());
-            System.out.println(v.getQuantidadePC());
+            //System.out.println(v.toString());
 
             Venda v2 = new Venda();
             v2.setData(v.getData());

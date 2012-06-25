@@ -7,36 +7,36 @@
      <char>1</char>
     </void>
     <void property="codigo">
-     <string>01</string>
+     <string>0019</string>
     </void>
     <void property="nome">
-     <string>afonso</string>
+     <string>AFONSO CARVALHO</string>
     </void>
    </object>
   </void>
   <void index="1">
    <object class="model.entity.Vendedor">
     <void property="categoria">
-     <char>2</char>
+     <char>1</char>
     </void>
     <void property="codigo">
-     <string>02</string>
+     <string>0020</string>
     </void>
     <void property="nome">
-     <string>pc</string>
+     <string>MANOEL SILVA</string>
     </void>
    </object>
   </void>
   <void index="2">
    <object class="model.entity.Vendedor">
     <void property="categoria">
-     <char>1</char>
+     <char>2</char>
     </void>
     <void property="codigo">
-     <string>03</string>
+     <string>0021</string>
     </void>
     <void property="nome">
-     <string>marina</string>
+     <string>JOANA ANGELICA</string>
     </void>
    </object>
   </void>
