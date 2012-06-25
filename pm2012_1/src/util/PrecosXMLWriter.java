@@ -8,7 +8,6 @@ import java.beans.XMLEncoder;
 import java.io.FileOutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import model.entity.Preco;
 
 /**
