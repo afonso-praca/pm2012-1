@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="1.7.0" class="java.beans.XMLDecoder">
- <array class="model.entity.Preco" length="3">
+ <array class="model.entity.Preco" length="2">
   <void index="0">
    <object class="model.entity.Preco">
     <void property="data">
      <object class="java.util.Date">
-      <long>1328234400000</long>
+      <long>1297303200000</long>
      </object>
     </void>
     <void property="precoPA">
-     <double>10.0</double>
+     <double>40.0</double>
     </void>
     <void property="precoPB">
-     <double>11.0</double>
+     <double>50.0</double>
     </void>
     <void property="precoPC">
-     <double>12.0</double>
+     <double>70.0</double>
     </void>
    </object>
   </void>
@@ -23,35 +23,17 @@
    <object class="model.entity.Preco">
     <void property="data">
      <object class="java.util.Date">
-      <long>1331348400000</long>
+      <long>1299294000000</long>
      </object>
     </void>
     <void property="precoPA">
-     <double>10.0</double>
+     <double>42.5</double>
     </void>
     <void property="precoPB">
-     <double>8.23</double>
+     <double>51.7</double>
     </void>
     <void property="precoPC">
-     <double>2.2</double>
-    </void>
-   </object>
-  </void>
-  <void index="2">
-   <object class="model.entity.Preco">
-    <void property="data">
-     <object class="java.util.Date">
-      <long>1331434800000</long>
-     </object>
-    </void>
-    <void property="precoPA">
-     <double>10.0</double>
-    </void>
-    <void property="precoPB">
-     <double>12.0</double>
-    </void>
-    <void property="precoPC">
-     <double>14.0</double>
+     <double>70.0</double>
     </void>
    </object>
   </void>

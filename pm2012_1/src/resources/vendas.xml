@@ -4,63 +4,63 @@
   <void index="0">
    <object class="model.entity.Venda">
     <void property="codigoVendedor">
-     <string>01</string>
+     <string>0020</string>
     </void>
     <void property="data">
      <object class="java.util.Date">
-      <long>1331348400000</long>
+      <long>1299726000000</long>
      </object>
     </void>
     <void property="quantidadePA">
-     <int>1</int>
+     <int>10</int>
     </void>
     <void property="quantidadePB">
-     <int>2</int>
+     <int>30</int>
     </void>
     <void property="quantidadePC">
-     <int>3</int>
+     <int>50</int>
     </void>
    </object>
   </void>
   <void index="1">
    <object class="model.entity.Venda">
     <void property="codigoVendedor">
-     <string>01</string>
+     <string>0019</string>
     </void>
     <void property="data">
      <object class="java.util.Date">
-      <long>1331434800000</long>
+      <long>1299726000000</long>
      </object>
     </void>
     <void property="quantidadePA">
-     <int>2</int>
+     <int>15</int>
     </void>
     <void property="quantidadePB">
-     <int>2</int>
+     <int>35</int>
     </void>
     <void property="quantidadePC">
-     <int>3</int>
+     <int>55</int>
     </void>
    </object>
   </void>
   <void index="2">
    <object class="model.entity.Venda">
     <void property="codigoVendedor">
-     <string>02</string>
+     <string>0020</string>
     </void>
     <void property="data">
      <object class="java.util.Date">
-      <long>1331521200000</long>
+      <long>1299726000000</long>
      </object>
     </void>
     <void property="quantidadePA">
-     <int>1</int>
+     <int>40</int>
     </void>
     <void property="quantidadePB">
-     <int>2</int>
+     <int>20</int>
     </void>
     <void property="quantidadePC">
-     <int>3</int>
+     <int>60</int>
     </void>
    </object>
   </void>
