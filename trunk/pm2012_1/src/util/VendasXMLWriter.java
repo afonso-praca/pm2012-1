@@ -23,9 +23,9 @@ public class VendasXMLWriter {
         sdf = new SimpleDateFormat("dd/MM/yyyy");
         
         Venda[] vendas =  new Venda[3];
-        vendas[0] = new Venda(sdf.parse("10/03/2012"), "01", 1, 2, 3);
-        vendas[1] = new Venda(sdf.parse("11/03/2012"), "01", 2, 2, 3);
-        vendas[2] = new Venda(sdf.parse("12/03/2012"), "02", 1, 2, 3);
+        vendas[0] = new Venda(sdf.parse("10/03/2011"), "0020", 10, 30, 50);
+        vendas[1] = new Venda(sdf.parse("10/03/2011"), "0019", 15, 35, 55);
+        vendas[2] = new Venda(sdf.parse("10/03/2011"), "0020", 40, 20, 60);
         
         XMLEncoder writer = null;
         

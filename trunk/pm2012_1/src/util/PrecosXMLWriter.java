@@ -22,10 +22,9 @@ public class PrecosXMLWriter {
         
         sdf = new SimpleDateFormat("dd/MM/yyyy");
         
-        Preco[] precos = new Preco[3];
-        precos[0] = new Preco(sdf.parse("03/02/2012"), 10, 11, 12);
-        precos[1] = new Preco(sdf.parse("10/03/2012"), 10, 8.23, 2.2);
-        precos[2] = new Preco(sdf.parse("11/03/2012"), 10, 12, 14);
+        Preco[] precos = new Preco[2];
+        precos[0] = new Preco(sdf.parse("10/02/2011"), 40.00, 50.00, 70.00);
+        precos[1] = new Preco(sdf.parse("05/03/2011"), 42.50, 51.70, 70.00);
         
         XMLEncoder writer = null;
         

@@ -17,9 +17,9 @@ public class VendedoresXMLWriter {
     public static void EscreveXml(){
         
         Vendedor[] vendedores = new Vendedor[3];
-        vendedores[0] = new Vendedor("01", "afonso", '1');
-        vendedores[1] = new Vendedor("02", "pc", '2');
-        vendedores[2] = new Vendedor("03", "marina", '1');
+        vendedores[0] = new Vendedor("0019", "AFONSO CARVALHO", '1');
+        vendedores[1] = new Vendedor("0020", "MANOEL SILVA", '1');
+        vendedores[2] = new Vendedor("0021", "JOANA ANGELICA", '2');
         
         XMLEncoder writer = null;
         
