@@ -1,13 +1,8 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * tela principal da aplicação
+ *
  */
 
-/*
- * tela_principal.java
- *
- * Created on 17/05/2012, 02:00:01
- */
 package view;
 
 import controller.Controller;
@@ -22,6 +17,7 @@ import javax.swing.JOptionPane;
  *
  * @author PC
  */
+
 public class Main extends javax.swing.JFrame {
 
     String tipo_arquivo_origem = null;
@@ -362,9 +358,7 @@ public class Main extends javax.swing.JFrame {
         controller = new Controller();
 
         String mes = (String) combo_box_mes.getSelectedItem();
-        //String retorno_valida_mes = ValidaMain.validaMes(mes);
 
-        //if ("valido".equals(retorno_valida_mes)) {
         String vendas_path = text_field_vendas.getText();
         String precos_path = text_field_precos.getText();
         String vendedores_path = text_field_vendedores.getText();
@@ -373,7 +367,6 @@ public class Main extends javax.swing.JFrame {
         String msgArquivos = ValidaMain.validaArquivos(vendas_path, precos_path, vendedores_path, saida_path);
 
         if ("".equals(msgArquivos)) {
-
             //chama o controler.java
             //aqui vamos passar as urls que devem ser carregadas
             try {
@@ -386,9 +379,6 @@ public class Main extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, msgArquivos);
         }
-        //} else {
-        //JOptionPane.showMessageDialog(this, retorno_valida_mes);
-        //}
     }//GEN-LAST:event_button_calcActionPerformed
 
     public String geraCaminho() {
