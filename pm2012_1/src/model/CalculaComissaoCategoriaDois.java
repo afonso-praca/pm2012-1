@@ -17,7 +17,7 @@ public class CalculaComissaoCategoriaDois implements ICalculaComissao {
 
         if (valorTotalVendas <= 2000.00){
             valorComissao = (valorTotalVendas * 0.1); 
-        } else if ((valorTotalVendas>2000.00) && (valorTotalVendas <= 4000.00)){
+        } else if ((valorTotalVendas > 2000.00) && (valorTotalVendas <= 4000.00)){
             valorComissao = (valorTotalVendas * 0.2);
         }else if ( valorTotalVendas > 4000.00){
             valorComissao = (valorTotalVendas * 0.3);
