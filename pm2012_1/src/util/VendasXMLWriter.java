@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package util;
 
 import java.beans.XMLEncoder;
@@ -12,8 +8,10 @@ import model.entity.Venda;
 
 /**
  *
+ * Classe utilitária para gerar o xml que será lido
  * @author Afonso
  */
+
 public class VendasXMLWriter {
     
     private static SimpleDateFormat sdf;
