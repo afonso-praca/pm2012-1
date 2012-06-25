@@ -1,14 +1,14 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 import model.entity.Comissao;
 
+/**
+ *
+ * @author Afonso
+ */
+
 public interface ICalculaComissao {
 
-	void CalculaComissao(Comissao _comissao);
-
-	
+    void CalculaComissao(Comissao _comissao);
+    
 }
