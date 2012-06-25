@@ -11,8 +11,10 @@
 package view;
 
 import controller.Controller;
+import java.awt.Button;
 import java.awt.Component;
 import java.io.File;
+import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
@@ -56,7 +58,6 @@ public class Main extends javax.swing.JFrame {
         label_precos = new javax.swing.JLabel();
         label_vendedores = new javax.swing.JLabel();
         label_saida = new javax.swing.JLabel();
-        text_field_mes = new javax.swing.JTextField();
         text_field_vendas = new javax.swing.JTextField();
         text_field_precos = new javax.swing.JTextField();
         text_field_vendedores = new javax.swing.JTextField();
@@ -66,6 +67,7 @@ public class Main extends javax.swing.JFrame {
         btFileChooserPreços = new javax.swing.JButton();
         btFileChooserVendedores = new javax.swing.JButton();
         btFileChooserSaida = new javax.swing.JButton();
+        combo_box_mes = new javax.swing.JComboBox();
         jPanel_radioButton = new javax.swing.JPanel();
         label_leitura = new javax.swing.JLabel();
         rb_TXT = new javax.swing.JRadioButton();
@@ -136,9 +138,6 @@ public class Main extends javax.swing.JFrame {
         label_saida.setText("Arquivo de Saida");
         label_saida.setEnabled(false);
 
-        text_field_mes.setEnabled(false);
-        text_field_mes.setName(""); // NOI18N
-
         text_field_vendas.setEnabled(false);
 
         text_field_precos.setEnabled(false);
@@ -187,6 +186,14 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        combo_box_mes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" }));
+        combo_box_mes.setEnabled(false);
+        combo_box_mes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combo_box_mesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panel_info_fieldsLayout = new javax.swing.GroupLayout(panel_info_fields);
         panel_info_fields.setLayout(panel_info_fieldsLayout);
         panel_info_fieldsLayout.setHorizontalGroup(
@@ -201,29 +208,29 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(label_saida))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(button_calc)
                     .addGroup(panel_info_fieldsLayout.createSequentialGroup()
-                        .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(text_field_mes, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(text_field_vendas)
-                            .addComponent(text_field_precos)
-                            .addComponent(text_field_vendedores)
-                            .addComponent(text_field_saida))
+                        .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(combo_box_mes, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(text_field_vendas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(text_field_precos, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(text_field_vendedores, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(text_field_saida, javax.swing.GroupLayout.Alignment.LEADING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btFileChooserVendedores, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btFileChooserPreços, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btFileChooserVendas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btFileChooserSaida, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(button_calc))
+                            .addComponent(btFileChooserSaida, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
         panel_info_fieldsLayout.setVerticalGroup(
             panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_info_fieldsLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(text_field_mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_mes))
+                .addGap(23, 23, 23)
+                .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(label_mes)
+                    .addComponent(combo_box_mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(text_field_vendas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -322,7 +329,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(panel_infoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(panel_info_fields, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel_radioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -353,10 +360,11 @@ public class Main extends javax.swing.JFrame {
     private void button_calcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_calcActionPerformed
 
         controller = new Controller();
-        String mes = text_field_mes.getText();
-        String retorno_valida_mes = ValidaMain.validaMes(mes);
-
-        if ("valido".equals(retorno_valida_mes)) {
+                 
+        String mes = combo_box_mes.getUIClassID();
+        //String retorno_valida_mes = ValidaMain.validaMes(mes);
+        
+        //if ("valido".equals(retorno_valida_mes)) {
             String vendas_path = text_field_vendas.getText();
             String precos_path = text_field_precos.getText();
             String vendedores_path = text_field_vendedores.getText();
@@ -378,9 +386,9 @@ public class Main extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(this, msgArquivos);
             }
-        } else {
-            JOptionPane.showMessageDialog(this, retorno_valida_mes);
-        }
+        //} else {
+            //JOptionPane.showMessageDialog(this, retorno_valida_mes);
+        //}
     }//GEN-LAST:event_button_calcActionPerformed
 
     public String geraCaminho() {
@@ -438,7 +446,8 @@ public class Main extends javax.swing.JFrame {
             //System.out.println(comps[i]);
             if (comps[i] instanceof javax.swing.JTextField
                     || comps[i] instanceof javax.swing.JLabel
-                    || comps[i] instanceof javax.swing.JButton) {
+                    || comps[i] instanceof javax.swing.JButton
+                    || comps[i] instanceof javax.swing.JComboBox) {
                 comps[i].setEnabled(true);
             }
         }
@@ -470,6 +479,11 @@ public class Main extends javax.swing.JFrame {
         tipo_arquivo_origem = selectTypeFile();
     }//GEN-LAST:event_rb_XMLActionPerformed
 
+    private void combo_box_mesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_box_mesActionPerformed
+        JComboBox cb = (JComboBox)evt.getSource();
+        String mes = (String)cb.getSelectedItem();
+    }//GEN-LAST:event_combo_box_mesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -488,6 +502,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JButton button_calc;
+    private javax.swing.JComboBox combo_box_mes;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JPanel jPanel_radioButton;
     private javax.swing.JLabel label_informacoes;
@@ -503,7 +518,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel panel_title;
     private javax.swing.JRadioButton rb_TXT;
     private javax.swing.JRadioButton rb_XML;
-    private javax.swing.JTextField text_field_mes;
     private javax.swing.JTextField text_field_precos;
     private javax.swing.JTextField text_field_saida;
     private javax.swing.JTextField text_field_vendas;

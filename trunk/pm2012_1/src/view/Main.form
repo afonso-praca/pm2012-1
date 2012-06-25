@@ -150,7 +150,7 @@
                       <Component id="panel_info_fields" max="32767" attributes="0"/>
                       <Component id="jPanel_radioButton" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="21" max="32767" attributes="0"/>
+                  <EmptySpace pref="24" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -191,10 +191,11 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="button_calc" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="text_field_mes" pref="200" max="32767" attributes="0"/>
-                                  <Component id="text_field_vendas" alignment="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="combo_box_mes" max="32767" attributes="0"/>
+                                  <Component id="text_field_vendas" alignment="0" pref="200" max="32767" attributes="0"/>
                                   <Component id="text_field_precos" alignment="0" max="32767" attributes="0"/>
                                   <Component id="text_field_vendedores" alignment="0" max="32767" attributes="0"/>
                                   <Component id="text_field_saida" alignment="0" max="32767" attributes="0"/>
@@ -207,7 +208,6 @@
                                   <Component id="btFileChooserSaida" alignment="1" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="button_calc" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="72" max="32767" attributes="0"/>
                   </Group>
@@ -216,10 +216,10 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="text_field_mes" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="label_mes" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="label_mes" linkSize="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="combo_box_mes" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -300,12 +300,6 @@
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="text_field_mes">
-              <Properties>
-                <Property name="enabled" type="boolean" value="false"/>
-                <Property name="name" type="java.lang.String" value="" noResource="true"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JTextField" name="text_field_vendas">
               <Properties>
                 <Property name="enabled" type="boolean" value="false"/>
@@ -369,6 +363,17 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btFileChooserSaidaActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="combo_box_mes">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new javax.swing.DefaultComboBoxModel(new String[] { &quot;Janeiro&quot;, &quot;Fevereiro&quot;, &quot;Mar&#xe7;o&quot;, &quot;Abril&quot;, &quot;Maio&quot;, &quot;Junho&quot;, &quot;Julho&quot;, &quot;Agosto&quot;, &quot;Setembro&quot;, &quot;Outubro&quot;, &quot;Novembro&quot;, &quot;Dezembro&quot; })" type="code"/>
+                </Property>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="combo_box_mesActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
