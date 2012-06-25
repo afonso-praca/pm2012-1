@@ -47,13 +47,24 @@ public class Controller {
             // seleciona o tipo de leitura a ser feito (XML ou CSV)
             if (tipo_arquivo_origem.equalsIgnoreCase("txt"))
             {
+                //lê os CSVs
                 Vendas = VendaToEntity.getInstance().ConverteArquivoDoModelo(vendasPath);
                 Precos = PrecoToEntity.getInstance().ConverteArquivoDoModelo(precosPath);
                 Vendedores = VendedorToEntity.getInstance().ConverteArquivoDoModelo(vendedoresPath);
-            } else if (tipo_arquivo_origem.equalsIgnoreCase("xml")) {
-                Vendedores = VendedorXmlReader.LeArquivoParaUmaLista(vendedoresPath);
-                Vendas = VendaXmlReader.LeArquivoParaUmaLista(vendasPath);
-                Precos = PrecoXmlReader.LeArquivoParaUmaLista(precosPath);
+                
+            } 
+            else 
+            if (tipo_arquivo_origem.equalsIgnoreCase("xml")) 
+            {
+                //instancia leitores de XML
+                VendedorXmlReader vendedorXmlReader = new VendedorXmlReader();
+                VendaXmlReader vendaXmlReader = new VendaXmlReader();
+                PrecoXmlReader precoXmlReader = new PrecoXmlReader();
+                
+                //lê os xmls e povoas as listas
+                Vendedores = vendedorXmlReader.LeArquivoParaUmaLista(vendedoresPath);
+                Vendas = vendaXmlReader.LeArquivoParaUmaLista(vendasPath);
+                Precos = precoXmlReader.LeArquivoParaUmaLista(precosPath);
             }
 
             // Verifica os retornos e chama o calculo
