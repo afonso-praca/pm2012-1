@@ -10,6 +10,21 @@ import model.entity.Venda;
 
 public class VendaXmlReader extends XMLToEntity<Venda> {
     
+    private static VendaXmlReader instancia;
+    
+    /**
+    * Singleton
+    * 
+    * @return uma instância da classe VendaXmlReader 
+    * 
+    */
+    public static VendaXmlReader getInstance() {
+        if (instancia == null) {
+            instancia = new VendaXmlReader();
+        }
+        return instancia;
+    }
+    
    public List<Venda> LeArquivoParaUmaLista(String caminhoDeOrigemXML) {
 		
         Venda[] vendas;

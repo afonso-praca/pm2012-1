@@ -6,8 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * classe genérica da aplicação.
+ * Todos os leitores xml devem estendê-la informando o seu tipo <T>
+ * 
+ * P.ex.: public class VendaXmlReader extends XMLToEntity<Venda>
  *
+ * @param <T> 
  * @author Afonso
+ *
  */
 
 public abstract class XMLToEntity<T> {
