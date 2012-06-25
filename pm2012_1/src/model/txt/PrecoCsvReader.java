@@ -14,23 +14,23 @@ import model.entity.Preco;
  *
  * @author Afonso
  */
-public class PrecoToEntity extends CSVToEntity<Preco> {
+public class PrecoCsvReader extends CSVToEntity<Preco> {
     
-    private static PrecoToEntity instancia;
+    private static PrecoCsvReader instancia;
     
-    public PrecoToEntity(){
+    public PrecoCsvReader(){
         sdf = new SimpleDateFormat("dd/MM/yyyy");
     }
     
     /**
     * Singleton
     * 
-    * @return uma instância da classe PrecoToEntity 
+    * @return uma instância da classe PrecoCsvReader 
     * 
     */
-    public static PrecoToEntity getInstance() {
+    public static PrecoCsvReader getInstance() {
         if (instancia == null) {
-            instancia = new PrecoToEntity();
+            instancia = new PrecoCsvReader();
         }
         return instancia;
     }
