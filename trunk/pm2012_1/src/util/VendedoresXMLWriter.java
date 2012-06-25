@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package util;
 
 import java.beans.XMLEncoder;
@@ -10,8 +6,10 @@ import model.entity.Vendedor;
 
 /**
  *
+ * Classe utilitária para gerar o xml que será lido
  * @author Afonso
  */
+
 public class VendedoresXMLWriter {
     
     public static void EscreveXml(){
@@ -36,5 +34,4 @@ public class VendedoresXMLWriter {
             System.out.println(e.getMessage());
         }
     }
-       
 }
