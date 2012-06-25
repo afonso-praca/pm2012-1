@@ -10,6 +10,21 @@ import model.entity.Preco;
 
 public class PrecoXmlReader extends XMLToEntity<Preco> {
     
+    private static PrecoXmlReader instancia;
+    
+    /**
+    * Singleton
+    * 
+    * @return uma instância da classe PrecoXmlReader 
+    * 
+    */
+    public static PrecoXmlReader getInstance() {
+        if (instancia == null) {
+            instancia = new PrecoXmlReader();
+        }
+        return instancia;
+    }
+    
     public List<Preco> LeArquivoParaUmaLista(String caminhoDeOrigemXML){
         
         Preco[] precos;
