@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * classe genérica da aplicação.
- * Todos os leitores devem estendê-la informando o seu tipo <T>
+ * Todos os leitores csv devem estendê-la informando o seu tipo <T>
  * 
  * P.ex.: public class VendaToEntity extends CSVToEntity<Venda>
  *
@@ -14,6 +14,7 @@ import java.util.List;
  * @author Afonso
  *
  */
+
 public abstract class CSVToEntity<T> {
     
     TextFileReader FileReader;
@@ -30,5 +31,4 @@ public abstract class CSVToEntity<T> {
         //List<T> listaPrecosDoArquivo = new ArrayList<T>();
         return ArquivoEmLista;	
     }
-        
 }
