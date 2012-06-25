@@ -11,8 +11,9 @@
 package view;
 
 import controller.Controller;
-import java.awt.Button;
 import java.awt.Component;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.io.File;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
@@ -28,7 +29,7 @@ public class Main extends javax.swing.JFrame {
     
     //controller
     static Controller controller;
-    
+
     /**
      * Creates new form tela_principal
      */
@@ -186,7 +187,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        combo_box_mes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" }));
+        combo_box_mes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
         combo_box_mes.setEnabled(false);
         combo_box_mes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,9 +229,9 @@ public class Main extends javax.swing.JFrame {
             panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_info_fieldsLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(label_mes)
-                    .addComponent(combo_box_mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(combo_box_mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_mes))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panel_info_fieldsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(text_field_vendas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -360,41 +361,41 @@ public class Main extends javax.swing.JFrame {
     private void button_calcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_calcActionPerformed
 
         controller = new Controller();
-                 
-        String mes = combo_box_mes.getUIClassID();
+
+        String mes = (String) combo_box_mes.getSelectedItem();
         //String retorno_valida_mes = ValidaMain.validaMes(mes);
-        
+
         //if ("valido".equals(retorno_valida_mes)) {
-            String vendas_path = text_field_vendas.getText();
-            String precos_path = text_field_precos.getText();
-            String vendedores_path = text_field_vendedores.getText();
-            String saida_path = text_field_saida.getText();
+        String vendas_path = text_field_vendas.getText();
+        String precos_path = text_field_precos.getText();
+        String vendedores_path = text_field_vendedores.getText();
+        String saida_path = text_field_saida.getText();
 
-            String msgArquivos = ValidaMain.validaArquivos(vendas_path, precos_path, vendedores_path, saida_path);
+        String msgArquivos = ValidaMain.validaArquivos(vendas_path, precos_path, vendedores_path, saida_path);
 
-            if ("".equals(msgArquivos)) {
-                
-                //chama o controler.java
-                //aqui vamos passar as urls que devem ser carregadas
-                try {
-                    controller.calculaComissoes(mes, vendas_path, precos_path, vendedores_path, saida_path, tipo_arquivo_origem);
-                    JOptionPane.showMessageDialog(this, "Arquivo salvo com sucesso !");
-                } catch (Exception e) {
-                    System.out.println("erro " + e.getMessage());
-                    JOptionPane.showMessageDialog(this, "Erro, por favor verifique as entradas", "ERRO", JOptionPane.ERROR_MESSAGE);
-                }
-            } else {
-                JOptionPane.showMessageDialog(this, msgArquivos);
+        if ("".equals(msgArquivos)) {
+
+            //chama o controler.java
+            //aqui vamos passar as urls que devem ser carregadas
+            try {
+                controller.calculaComissoes(mes, vendas_path, precos_path, vendedores_path, saida_path, tipo_arquivo_origem);
+                JOptionPane.showMessageDialog(this, "Arquivo salvo com sucesso !");
+            } catch (Exception e) {
+                System.out.println("erro " + e.getMessage());
+                JOptionPane.showMessageDialog(this, "Erro, por favor verifique as entradas", "ERRO", JOptionPane.ERROR_MESSAGE);
             }
+        } else {
+            JOptionPane.showMessageDialog(this, msgArquivos);
+        }
         //} else {
-            //JOptionPane.showMessageDialog(this, retorno_valida_mes);
+        //JOptionPane.showMessageDialog(this, retorno_valida_mes);
         //}
     }//GEN-LAST:event_button_calcActionPerformed
 
     public String geraCaminho() {
         JFileChooser chooser = new JFileChooser();
         int returnVal = chooser.showOpenDialog(null);
-        
+
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             File arq = chooser.getSelectedFile().getAbsoluteFile();
             String caminho = arq.getPath();
@@ -466,7 +467,7 @@ public class Main extends javax.swing.JFrame {
         } catch (Exception e) {
             return e.getMessage();
         }
-        return("Deu Problema");
+        return ("Deu Problema");
     }
 
     private void rb_TXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_TXTActionPerformed
@@ -479,16 +480,26 @@ public class Main extends javax.swing.JFrame {
         tipo_arquivo_origem = selectTypeFile();
     }//GEN-LAST:event_rb_XMLActionPerformed
 
+   
+    
     private void combo_box_mesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_box_mesActionPerformed
-        JComboBox cb = (JComboBox)evt.getSource();
-        String mes = (String)cb.getSelectedItem();
-    }//GEN-LAST:event_combo_box_mesActionPerformed
 
+
+        combo_box_mes.addItemListener(new ItemListener() {
+            
+            public void itemStateChanged(ItemEvent ie) {
+                String str = (String) combo_box_mes.getSelectedItem();
+                
+            }
+        });
+
+    }//GEN-LAST:event_combo_box_mesActionPerformed
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new Main().setVisible(true);
             }
