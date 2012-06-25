@@ -14,23 +14,23 @@ import model.entity.Venda;
  *
  * @author Afonso
  */
-public class VendaToEntity extends CSVToEntity<Venda> {
+public class VendaCsvReader extends CSVToEntity<Venda> {
     
-    private static VendaToEntity instancia;
+    private static VendaCsvReader instancia;
     
-    public VendaToEntity(){
+    public VendaCsvReader(){
         sdf = new SimpleDateFormat("dd/MM/yyyy");
     }
     
     /**
     * Singleton
     * 
-    * @return uma instância da classe VendaToEntity 
+    * @return uma instância da classe VendaCsvReader 
     * 
     */
-    public static VendaToEntity getInstance() {
+    public static VendaCsvReader getInstance() {
         if (instancia == null) {
-            instancia = new VendaToEntity();
+            instancia = new VendaCsvReader();
         }
         return instancia;
     }

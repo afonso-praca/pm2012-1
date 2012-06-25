@@ -12,19 +12,19 @@ import model.entity.Vendedor;
  *
  * @author Afonso
  */
-public class VendedorToEntity extends CSVToEntity<Vendedor> {
+public class VendedorCsvReader extends CSVToEntity<Vendedor> {
     
-    private static VendedorToEntity instancia;
+    private static VendedorCsvReader instancia;
     
     /**
     * Singleton
     * 
-    * @return uma instância da classe VendedorToEntity 
+    * @return uma instância da classe VendedorCsvReader 
     * 
     */
-    public static VendedorToEntity getInstance() {
+    public static VendedorCsvReader getInstance() {
         if (instancia == null) {
-            instancia = new VendedorToEntity();
+            instancia = new VendedorCsvReader();
         }
         return instancia;
     }
