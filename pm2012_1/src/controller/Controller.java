@@ -13,9 +13,9 @@ import model.entity.Comissao;
 import model.entity.Preco;
 import model.entity.Venda;
 import model.entity.Vendedor;
-import model.txt.PrecoToEntity;
-import model.txt.VendaToEntity;
-import model.txt.VendedorToEntity;
+import model.txt.PrecoCsvReader;
+import model.txt.VendaCsvReader;
+import model.txt.VendedorCsvReader;
 import model.xml.PrecoXmlReader;
 import model.xml.VendaXmlReader;
 import model.xml.VendedorXmlReader;
@@ -41,7 +41,7 @@ public class Controller {
         String precosPath, String vendedoresPath, String saidaPath, String tipo_arquivo_origem) throws Exception {
         System.out.println("Os arquivos de origem são do tipo: ".concat(tipo_arquivo_origem));
         
-        // DEBUG -> chama criador de xmls
+        // DEBUG -> chama criadores de xmls
         // util.PrecosXMLWriter.EscreveXml();
         // util.VendasXMLWriter.EscreveXml();
         // util.VendedoresXMLWriter.EscreveXml();
@@ -53,10 +53,9 @@ public class Controller {
             if (tipo_arquivo_origem.equalsIgnoreCase("txt"))
             {
                 //lê os CSVs e povoa as listas
-                Vendas = VendaToEntity.getInstance().ConverteArquivoDoModelo(vendasPath);
-                Precos = PrecoToEntity.getInstance().ConverteArquivoDoModelo(precosPath);
-                Vendedores = VendedorToEntity.getInstance().ConverteArquivoDoModelo(vendedoresPath);
-                
+                Vendas = VendaCsvReader.getInstance().ConverteArquivoDoModelo(vendasPath);
+                Precos = PrecoCsvReader.getInstance().ConverteArquivoDoModelo(precosPath);
+                Vendedores = VendedorCsvReader.getInstance().ConverteArquivoDoModelo(vendedoresPath);
             } 
             else 
             if (tipo_arquivo_origem.equalsIgnoreCase("xml")) 
